@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.18.2.5</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.18.2.9</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -99,6 +99,7 @@
 <span>  split_components <span class="op">=</span> <span class="cn">TRUE</span>,</span>
 <span>  select <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  caption <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  footer <span class="op">=</span> <span class="cn">NULL</span>,</span>
 <span>  digits <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>  ci_digits <span class="op">=</span> <span class="fl">2</span>,</span>
 <span>  p_digits <span class="op">=</span> <span class="fl">3</span>,</span>
@@ -123,8 +124,11 @@
 
 
 <dt>pretty_names</dt>
-<dd><p>Return "pretty" (i.e. more human readable) parameter
-names.</p></dd>
+<dd><p>Can be <code>TRUE</code>, which will return "pretty" (i.e. more human
+readable) parameter names. Or <code>"labels"</code>, in which case value and variable
+labels will be used as parameters names. The latter only works for "labelled"
+data, i.e. if the data used to fit the model had <code>"label"</code> and <code>"labels"</code>
+attributes. See also section <em>Global Options to Customize Messages when Printing</em>.</p></dd>
 
 
 <dt>split_components</dt>
@@ -142,7 +146,15 @@ while <code>select = "short"</code> prints coefficient, standard errors and p-va
 
 
 <dt>caption</dt>
-<dd><p>Table caption as string. If <code>NULL</code>, no table caption is printed.</p></dd>
+<dd><p>Table caption as string. If <code>NULL</code>, depending on the model,
+either a default caption or no table caption is printed. Use <code>caption = ""</code>
+to suppress the table caption.</p></dd>
+
+
+<dt>footer</dt>
+<dd><p>Can either be <code>FALSE</code> or an empty string (i.e. <code>""</code>) to
+suppress the footer, <code>NULL</code> to print the default footer, or a string. The
+latter will combine the string value with the default footer.</p></dd>
 
 
 <dt>digits, ci_digits, p_digits</dt>
@@ -236,6 +248,12 @@ show the additional information on how to interpret coefficients of models
 with log-transformed response variables or with log-/logit-links when the
 <code>exponentiate</code> argument in <code><a href="model_parameters.html">model_parameters()</a></code> is not <code>TRUE</code>. Set this option
 to <code>FALSE</code> to hide this message when printing <code><a href="model_parameters.html">model_parameters()</a></code> objects.</p></li>
+<li><p><code>parameters_labels</code>: <code>options(parameters_labels = TRUE)</code> will use variable
+and value labels for pretty names, if data is labelled. If no labels
+available, default pretty names are used.</p></li>
+<li><p><code>parameters_select</code>: <code>options(parameters_select = &lt;value&gt;)</code> will set the
+default for the <code>select</code> argument. See argument's documentation for available
+options.</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="interpretation-of-interaction-terms">Interpretation of Interaction Terms<a class="anchor" aria-label="anchor" href="#interpretation-of-interaction-terms"></a></h2>

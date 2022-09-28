@@ -72,7 +72,7 @@ WRS2, bfsl, deltaMethod, fitdistr, mjoint, mle, model.avg, ...
     
     <a class="navbar-brand me-2" href="../index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.18.2.5</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.18.2.9</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -356,7 +356,7 @@ maximum-likelihood estimate to the the likelihood for models with one or more
 parameter values changed (e.g., set to zero or a range of alternative values).
 Likelihood ratios for the maximum-likelihood and alternative models are compared
 to a \(\chi\)-squared distribution to compute CIs and p-values.</p>
-<p><code>"profile"</code></p><ul><li><p>Applies to <em>non-Bayesian models</em> of class <code>glm</code>, <code>polr</code> or <code>glmmTMB</code>.
+<p><code>"profile"</code></p><ul><li><p>Applies to <em>non-Bayesian models</em> of class <code>glm</code>, <code>polr</code>, <code>merMod</code> or <code>glmmTMB</code>.
 CIs computed by <em>profiling the likelihood curve for a parameter</em>, using
 linear interpolation to find where likelihood ratio equals a critical value;
 p-values computed using the Wald method with a <em>normal-distribution</em> (note:
@@ -442,6 +442,12 @@ show the additional information on how to interpret coefficients of models
 with log-transformed response variables or with log-/logit-links when the
 <code>exponentiate</code> argument in <code>model_parameters()</code> is not <code>TRUE</code>. Set this option
 to <code>FALSE</code> to hide this message when printing <code>model_parameters()</code> objects.</p></li>
+<li><p><code>parameters_labels</code>: <code>options(parameters_labels = TRUE)</code> will use variable
+and value labels for pretty names, if data is labelled. If no labels
+available, default pretty names are used.</p></li>
+<li><p><code>parameters_select</code>: <code>options(parameters_select = &lt;value&gt;)</code> will set the
+default for the <code>select</code> argument. See argument's documentation for available
+options.</p></li>
 </ul></div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
