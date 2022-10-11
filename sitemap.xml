@@ -40,9 +40,6 @@
     <loc>https://easystats.github.io/parameters/articles/model_parameters_robust.html</loc>
   </url>
   <url>
-    <loc>https://easystats.github.io/parameters/articles/model_parameters_standardized.html</loc>
-  </url>
-  <url>
     <loc>https://easystats.github.io/parameters/articles/overview_of_vignettes.html</loc>
   </url>
   <url>
@@ -70,25 +67,7 @@
     <loc>https://easystats.github.io/parameters/reference/bootstrap_parameters.html</loc>
   </url>
   <url>
-    <loc>https://easystats.github.io/parameters/reference/check_clusterstructure.html</loc>
-  </url>
-  <url>
-    <loc>https://easystats.github.io/parameters/reference/check_factorstructure.html</loc>
-  </url>
-  <url>
-    <loc>https://easystats.github.io/parameters/reference/check_heterogeneity.html</loc>
-  </url>
-  <url>
-    <loc>https://easystats.github.io/parameters/reference/check_kmo.html</loc>
-  </url>
-  <url>
-    <loc>https://easystats.github.io/parameters/reference/check_sphericity_bartlett.html</loc>
-  </url>
-  <url>
     <loc>https://easystats.github.io/parameters/reference/ci.default.html</loc>
-  </url>
-  <url>
-    <loc>https://easystats.github.io/parameters/reference/ci_robust.html</loc>
   </url>
   <url>
     <loc>https://easystats.github.io/parameters/reference/cluster_analysis.html</loc>
@@ -250,9 +229,6 @@
     <loc>https://easystats.github.io/parameters/reference/p_value_ml1.html</loc>
   </url>
   <url>
-    <loc>https://easystats.github.io/parameters/reference/p_value_robust.html</loc>
-  </url>
-  <url>
     <loc>https://easystats.github.io/parameters/reference/p_value_satterthwaite.html</loc>
   </url>
   <url>
@@ -302,9 +278,6 @@
   </url>
   <url>
     <loc>https://easystats.github.io/parameters/reference/standard_error.html</loc>
-  </url>
-  <url>
-    <loc>https://easystats.github.io/parameters/reference/standard_error_robust.html</loc>
   </url>
   <url>
     <loc>https://easystats.github.io/parameters/reference/standardize_info.html</loc>
