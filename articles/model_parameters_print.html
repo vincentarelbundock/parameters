@@ -14,8 +14,8 @@
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="../deps/bootstrap-5.2.0/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.0/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.2/font.css" rel="stylesheet">
+<link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.2/font.css" rel="stylesheet">
 <link href="../deps/JetBrains_Mono-0.4.2/font.css" rel="stylesheet">
 <link href="../deps/Roboto_Slab-0.4.2/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
@@ -39,7 +39,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.19.0.6</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.19.0.14</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -165,8 +165,8 @@ variable names, interactions are denoted by <code>*</code> etc.</p>
 <span><span class="co">#&gt; Species [versicolor]                |       -1.81 | 0.60 | [-2.99, -0.62] |  -3.02 | 0.003 </span></span>
 <span><span class="co">#&gt; Species [virginica]                 |       -3.15 | 0.63 | [-4.41, -1.90] |  -4.97 | &lt; .001</span></span>
 <span><span class="co">#&gt; Petal Length                        |        0.54 | 0.28 | [ 0.00,  1.09] |   1.96 | 0.052 </span></span>
-<span><span class="co">#&gt; Species [versicolor] * Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 </span></span>
-<span><span class="co">#&gt; Species [virginica] * Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120</span></span>
+<span><span class="co">#&gt; Species [versicolor] × Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 </span></span>
+<span><span class="co">#&gt; Species [virginica] × Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120</span></span>
 <span></span>
 <span><span class="va">mp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">mp</span>, pretty_names <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
@@ -303,8 +303,8 @@ as table header. However, you can also return a single table:</p>
 <span><span class="co">#&gt; Species [versicolor]                |       -1.81 | 0.60 | [-2.99, -0.62] |  -3.02 | 0.003 </span></span>
 <span><span class="co">#&gt; Species [virginica]                 |       -3.15 | 0.63 | [-4.41, -1.90] |  -4.97 | &lt; .001</span></span>
 <span><span class="co">#&gt; Petal Length                        |        0.54 | 0.28 | [ 0.00,  1.09] |   1.96 | 0.052 </span></span>
-<span><span class="co">#&gt; Species [versicolor] * Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 </span></span>
-<span><span class="co">#&gt; Species [virginica] * Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120 </span></span>
+<span><span class="co">#&gt; Species [versicolor] × Petal Length |        0.29 | 0.30 | [-0.30,  0.87] |   0.97 | 0.334 </span></span>
+<span><span class="co">#&gt; Species [virginica] × Petal Length  |        0.45 | 0.29 | [-0.12,  1.03] |   1.56 | 0.120 </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Model: Sepal.Length ~ Species * Petal.Length (150 Observations)</span></span>
 <span><span class="co">#&gt; Residual standard deviation: 0.336 (df = 144)</span></span>
@@ -501,8 +501,8 @@ according to the order specified in <code>groups</code>.</p>
 <span><span class="co">#&gt;   vs             |        3.18 | 3.79 | [ -4.68, 11.04] |  0.84 | 0.410</span></span>
 <span><span class="co">#&gt;   hp             |       -0.06 | 0.02 | [ -0.11, -0.02] | -2.91 | 0.008</span></span>
 <span><span class="co">#&gt; Interactions     |             |      |                 |       |      </span></span>
-<span><span class="co">#&gt;   gear [4] * vs  |       -2.90 | 4.67 | [-12.57,  6.78] | -0.62 | 0.541</span></span>
-<span><span class="co">#&gt;   gear [5] * vs  |        2.59 | 4.54 | [ -6.82, 12.00] |  0.57 | 0.574</span></span>
+<span><span class="co">#&gt;   gear [4] × vs  |       -2.90 | 4.67 | [-12.57,  6.78] | -0.62 | 0.541</span></span>
+<span><span class="co">#&gt;   gear [5] × vs  |        2.59 | 4.54 | [ -6.82, 12.00] |  0.57 | 0.574</span></span>
 <span><span class="co">#&gt; Controls         |             |      |                 |       |      </span></span>
 <span><span class="co">#&gt;   gear [4]       |        3.10 | 4.34 | [ -5.90, 12.10] |  0.71 | 0.482</span></span>
 <span><span class="co">#&gt;   gear [5]       |        4.80 | 3.48 | [ -2.42, 12.01] |  1.38 | 0.182</span></span>
@@ -529,8 +529,8 @@ border-separator. This argument is passed down to
 <span><span class="co">#&gt;   vs                     3.18  3.79  [ -4.68, 11.04]   0.84  0.410</span></span>
 <span><span class="co">#&gt;   hp                    -0.06  0.02  [ -0.11, -0.02]  -2.91  0.008</span></span>
 <span><span class="co">#&gt; Interactions                                                      </span></span>
-<span><span class="co">#&gt;   gear [4] * vs         -2.90  4.67  [-12.57,  6.78]  -0.62  0.541</span></span>
-<span><span class="co">#&gt;   gear [5] * vs          2.59  4.54  [ -6.82, 12.00]   0.57  0.574</span></span>
+<span><span class="co">#&gt;   gear [4] × vs         -2.90  4.67  [-12.57,  6.78]  -0.62  0.541</span></span>
+<span><span class="co">#&gt;   gear [5] × vs          2.59  4.54  [ -6.82, 12.00]   0.57  0.574</span></span>
 <span><span class="co">#&gt; Controls                                                          </span></span>
 <span><span class="co">#&gt;   gear [4]               3.10  4.34  [ -5.90, 12.10]   0.71  0.482</span></span>
 <span><span class="co">#&gt;   gear [5]               4.80  3.48  [ -2.42, 12.01]   1.38  0.182</span></span>
@@ -556,8 +556,8 @@ models, aligned side by side.</p>
 <span><span class="co">#&gt; Species (versicolor)                | 0.93 (0.73, 1.13) | -1.60 (-1.98, -1.22) | -1.81 (-2.99, -0.62)</span></span>
 <span><span class="co">#&gt; Species (virginica)                 | 1.58 (1.38, 1.79) | -2.12 (-2.66, -1.58) | -3.15 (-4.41, -1.90)</span></span>
 <span><span class="co">#&gt; Petal Length                        |                   |  0.90 ( 0.78,  1.03) |  0.54 ( 0.00,  1.09)</span></span>
-<span><span class="co">#&gt; Species (versicolor) * Petal Length |                   |                      |  0.29 (-0.30,  0.87)</span></span>
-<span><span class="co">#&gt; Species (virginica) * Petal Length  |                   |                      |  0.45 (-0.12,  1.03)</span></span>
+<span><span class="co">#&gt; Species (versicolor) × Petal Length |                   |                      |  0.29 (-0.30,  0.87)</span></span>
+<span><span class="co">#&gt; Species (virginica) × Petal Length  |                   |                      |  0.45 (-0.12,  1.03)</span></span>
 <span><span class="co">#&gt; -----------------------------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Observations                        |               150 |                  150 |                  150</span></span></code></pre></div>
 <div class="section level3">
@@ -574,10 +574,58 @@ errors instead of confidence intervals, or including p-values.</p>
 <span><span class="co">#&gt; Species (versicolor)                | 0.93*** (0.10) | -1.60*** (0.19) |  -1.81** (0.60)</span></span>
 <span><span class="co">#&gt; Species (virginica)                 | 1.58*** (0.10) | -2.12*** (0.27) | -3.15*** (0.63)</span></span>
 <span><span class="co">#&gt; Petal Length                        |                |  0.90*** (0.06) |     0.54 (0.28)</span></span>
-<span><span class="co">#&gt; Species (versicolor) * Petal Length |                |                 |     0.29 (0.30)</span></span>
-<span><span class="co">#&gt; Species (virginica) * Petal Length  |                |                 |     0.45 (0.29)</span></span>
+<span><span class="co">#&gt; Species (versicolor) × Petal Length |                |                 |     0.29 (0.30)</span></span>
+<span><span class="co">#&gt; Species (virginica) × Petal Length  |                |                 |     0.45 (0.29)</span></span>
 <span><span class="co">#&gt; ----------------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Observations                        |            150 |             150 |             150</span></span></code></pre></div>
+<p>The <code>style</code> argument also has a basic support for
+glue-like syntax, which lets you layout model elements in a very
+flexible way. Following tokens are replaced by the related summary
+coefficients or statistics:</p>
+<ul>
+<li>
+<code>{estimate}</code> (or <code>{coefficient}</code> or
+<code>{coef}</code>): coefficient</li>
+<li>
+<code>{se}</code> (or <code>{std.error}</code> or
+<code>{standard error}</code>): standard error</li>
+<li>
+<code>{ci_low}</code> and <code>{ci_high}</code>: lower/upper
+confidence interval limits</li>
+<li>
+<code>{p}</code> (or <code>{pval}</code> or <code>{p.value}</code>):
+p-values</li>
+<li>
+<a href="https://r-spatial.github.io/stars/" class="external-link">stars</a>: significant stars for p-values</li>
+</ul>
+<p>Note that you have to add parentheses manually, e.g. around
+confidence intervals.</p>
+<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># estimates, p-stars and standard error in parentheses</span></span>
+<span><span class="fu"><a href="../reference/compare_parameters.html">compare_parameters</a></span><span class="op">(</span><span class="va">lm1</span>, <span class="va">lm2</span>, <span class="va">lm3</span>, style <span class="op">=</span> <span class="st">"{estimate}{stars} ({se})"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Parameter                           |            lm1 |             lm2 |             lm3</span></span>
+<span><span class="co">#&gt; ----------------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; (Intercept)                         | 5.01*** (0.07) |  3.68*** (0.11) |  4.21*** (0.41)</span></span>
+<span><span class="co">#&gt; Species (versicolor)                | 0.93*** (0.10) | -1.60*** (0.19) | -1.81 ** (0.60)</span></span>
+<span><span class="co">#&gt; Species (virginica)                 | 1.58*** (0.10) | -2.12*** (0.27) | -3.15*** (0.63)</span></span>
+<span><span class="co">#&gt; Petal Length                        |                |  0.90*** (0.06) |     0.54 (0.28)</span></span>
+<span><span class="co">#&gt; Species (versicolor) × Petal Length |                |                 |     0.29 (0.30)</span></span>
+<span><span class="co">#&gt; Species (virginica) × Petal Length  |                |                 |     0.45 (0.29)</span></span>
+<span><span class="co">#&gt; ----------------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; Observations                        |            150 |             150 |             150</span></span>
+<span></span>
+<span><span class="co"># estimates, CI, p and stars</span></span>
+<span><span class="fu"><a href="../reference/compare_parameters.html">compare_parameters</a></span><span class="op">(</span><span class="va">lm1</span>, <span class="va">lm2</span>, <span class="va">lm3</span>, style <span class="op">=</span> <span class="st">"{estimate} ({ci_low}, {ci_high}), p={p}{stars}"</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Parameter                           |                           lm1 |                              lm2 |                              lm3</span></span>
+<span><span class="co">#&gt; -----------------------------------------------------------------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; (Intercept)                         | 5.01 (4.86, 5.15), p&lt;0.001*** |  3.68 ( 3.47,  3.89), p&lt;0.001*** |  4.21 ( 3.41,  5.02), p&lt;0.001***</span></span>
+<span><span class="co">#&gt; Species (versicolor)                | 0.93 (0.73, 1.13), p&lt;0.001*** | -1.60 (-1.98, -1.22), p&lt;0.001*** | -1.81 (-2.99, -0.62), p=0.003 **</span></span>
+<span><span class="co">#&gt; Species (virginica)                 | 1.58 (1.38, 1.79), p&lt;0.001*** | -2.12 (-2.66, -1.58), p&lt;0.001*** | -3.15 (-4.41, -1.90), p&lt;0.001***</span></span>
+<span><span class="co">#&gt; Petal Length                        |                               |  0.90 ( 0.78,  1.03), p&lt;0.001*** |     0.54 ( 0.00,  1.09), p=0.052</span></span>
+<span><span class="co">#&gt; Species (versicolor) × Petal Length |                               |                                  |     0.29 (-0.30,  0.87), p=0.334</span></span>
+<span><span class="co">#&gt; Species (virginica) × Petal Length  |                               |                                  |     0.45 (-0.12,  1.03), p=0.120</span></span>
+<span><span class="co">#&gt; -----------------------------------------------------------------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; Observations                        |                           150 |                              150 |                              150</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="defining-column-names">Defining column names<a class="anchor" aria-label="anchor" href="#defining-column-names"></a>
@@ -585,7 +633,7 @@ errors instead of confidence intervals, or including p-values.</p>
 <p>The column names for the models are by default the objects’ names.
 You can define own names using the <code>column_names</code>
 argument.</p>
-<div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="../reference/compare_parameters.html">compare_parameters</a></span><span class="op">(</span></span>
 <span>  <span class="va">lm1</span>, <span class="va">lm2</span>, <span class="va">lm3</span>,</span>
 <span>  column_names <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"First Model"</span>, <span class="st">"Second Model"</span>, <span class="st">"Third Model"</span><span class="op">)</span></span>
@@ -596,8 +644,8 @@ argument.</p>
 <span><span class="co">#&gt; Species (versicolor)                | 0.93 (0.73, 1.13) | -1.60 (-1.98, -1.22) | -1.81 (-2.99, -0.62)</span></span>
 <span><span class="co">#&gt; Species (virginica)                 | 1.58 (1.38, 1.79) | -2.12 (-2.66, -1.58) | -3.15 (-4.41, -1.90)</span></span>
 <span><span class="co">#&gt; Petal Length                        |                   |  0.90 ( 0.78,  1.03) |  0.54 ( 0.00,  1.09)</span></span>
-<span><span class="co">#&gt; Species (versicolor) * Petal Length |                   |                      |  0.29 (-0.30,  0.87)</span></span>
-<span><span class="co">#&gt; Species (virginica) * Petal Length  |                   |                      |  0.45 (-0.12,  1.03)</span></span>
+<span><span class="co">#&gt; Species (versicolor) × Petal Length |                   |                      |  0.29 (-0.30,  0.87)</span></span>
+<span><span class="co">#&gt; Species (virginica) × Petal Length  |                   |                      |  0.45 (-0.12,  1.03)</span></span>
 <span><span class="co">#&gt; -----------------------------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Observations                        |               150 |                  150 |                  150</span></span></code></pre></div>
 </div>
@@ -609,7 +657,7 @@ random effects, or models with count- and zero-inflation parts, using
 arguments <code>effects = "all"</code> and/or
 <code>component = "all"</code> prints separate tables for each model
 component.</p>
-<div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/glmmTMB/glmmTMB" class="external-link">glmmTMB</a></span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="st">"fish"</span><span class="op">)</span></span>
 <span></span>
@@ -660,7 +708,7 @@ component.</p>
 <p>For such tables, they usually become clearer when the columns per
 model are aligned to a fixed width. You can do this using
 <code>column_width = "fixed"</code>.</p>
-<div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">cp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/compare_parameters.html">compare_parameters</a></span><span class="op">(</span><span class="va">m0</span>, <span class="va">m1</span>, <span class="va">m2</span>, effects <span class="op">=</span> <span class="st">"all"</span>, component <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">cp</span>, column_width <span class="op">=</span> <span class="st">"fixed"</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # Fixed Effects</span></span>
@@ -697,7 +745,15 @@ model are aligned to a fixed width. You can do this using
 </h3>
 <p>Grouping parameters works for <code><a href="../reference/compare_parameters.html">compare_parameters()</a></code> in
 the same way as shown above for <code><a href="../reference/model_parameters.html">model_parameters()</a></code>.</p>
-<div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
+<p><strong>Note:</strong> By default, the interaction mark is
+<code>×</code>, not <code>*</code> (see also section on global options
+<a href="https://easystats.github.io/parameters/reference/print.parameters_model.html">in
+this vignette</a>). Since parameter names in
+<code><a href="../reference/compare_parameters.html">compare_parameters()</a></code> are already formatted before printing,
+<code>as.data.frame(cp)$Parameter</code> will probably return special
+unicode characters that you need to take care of in the
+<code>groups</code> argument (unless you use numeric indices).</p>
+<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">lm1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Species</span> <span class="op">+</span> <span class="va">Petal.Length</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span></span>
 <span><span class="va">lm2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Sepal.Width</span> <span class="op">~</span> <span class="va">Species</span> <span class="op">*</span> <span class="va">Petal.Length</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span></span>
 <span></span>
@@ -705,10 +761,10 @@ the same way as shown above for <code><a href="../reference/model_parameters.htm
 <span><span class="va">cp</span> <span class="op">&lt;-</span> <span class="fu"><a href="../reference/compare_parameters.html">compare_parameters</a></span><span class="op">(</span><span class="va">lm1</span>, <span class="va">lm2</span>, drop <span class="op">=</span> <span class="st">"^\\(Intercept"</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># look at parameters names, to know their names for "groups" argument</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">cp</span><span class="op">)</span><span class="op">$</span><span class="va">Parameter</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/as.data.frame.html" class="external-link">as.data.frame</a></span><span class="op">(</span><span class="va">cp</span><span class="op">)</span><span class="op">$</span><span class="va">Parameter</span> <span class="co"># note the unicode char as interaction mark</span></span>
 <span><span class="co">#&gt; [1] "Species (versicolor)"                "Species (virginica)"                </span></span>
-<span><span class="co">#&gt; [3] "Petal Length"                        "Species (versicolor) * Petal Length"</span></span>
-<span><span class="co">#&gt; [5] "Species (virginica) * Petal Length"</span></span>
+<span><span class="co">#&gt; [3] "Petal Length"                        "Species (versicolor) × Petal Length"</span></span>
+<span><span class="co">#&gt; [5] "Species (virginica) × Petal Length"</span></span>
 <span></span>
 <span><span class="co"># create groups. Interactions only present in 2nd model</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">cp</span>, groups <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/list.html" class="external-link">list</a></span><span class="op">(</span></span>
@@ -717,8 +773,8 @@ the same way as shown above for <code><a href="../reference/model_parameters.htm
 <span>    <span class="st">"Species (virginica)"</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  Interactions <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span></span>
-<span>    <span class="st">"Species (versicolor) * Petal Length"</span>,</span>
-<span>    <span class="st">"Species (virginica) * Petal Length"</span></span>
+<span>    <span class="st">"Species (versicolor) × Petal Length"</span>, <span class="co"># note the unicode char!</span></span>
+<span>    <span class="st">"Species (virginica) × Petal Length"</span></span>
 <span>  <span class="op">)</span>,</span>
 <span>  Controls <span class="op">=</span> <span class="st">"Petal Length"</span></span>
 <span><span class="op">)</span><span class="op">)</span></span>
@@ -728,8 +784,8 @@ the same way as shown above for <code><a href="../reference/model_parameters.htm
 <span><span class="co">#&gt;   Species (versicolor)                | -1.60 (-1.98, -1.22) | -1.69 (-2.80, -0.57)</span></span>
 <span><span class="co">#&gt;   Species (virginica)                 | -2.12 (-2.66, -1.58) | -1.19 (-2.37, -0.01)</span></span>
 <span><span class="co">#&gt; Interactions                          |                      |                     </span></span>
-<span><span class="co">#&gt;   Species (versicolor) * Petal Length |                      | -0.01 (-0.56,  0.53)</span></span>
-<span><span class="co">#&gt;   Species (virginica) * Petal Length  |                      | -0.15 (-0.69,  0.39)</span></span>
+<span><span class="co">#&gt;   Species (versicolor) × Petal Length |                      | -0.01 (-0.56,  0.53)</span></span>
+<span><span class="co">#&gt;   Species (virginica) × Petal Length  |                      | -0.15 (-0.69,  0.39)</span></span>
 <span><span class="co">#&gt; Controls                              |                      |                     </span></span>
 <span><span class="co">#&gt;   Petal Length                        |  0.90 ( 0.78,  1.03) |  0.39 (-0.13,  0.90)</span></span>
 <span><span class="co">#&gt; -----------------------------------------------------------------------------------</span></span>
@@ -749,7 +805,7 @@ wider than the current available width (i.e. line length) of the console
 is split into multiple parts. Else, if <code>table_width</code> is
 numeric and table rows are wider than <code>table_width</code>, the
 table is split into multiple parts.</p>
-<div class="sourceCode" id="cb20"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/data.html" class="external-link">data</a></span><span class="op">(</span><span class="va">iris</span><span class="op">)</span></span>
 <span><span class="va">lm1</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span></span>
 <span><span class="va">lm2</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/stats/lm.html" class="external-link">lm</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Species</span> <span class="op">+</span> <span class="va">Petal.Length</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span></span>
@@ -764,8 +820,8 @@ table is split into multiple parts.</p>
 <span><span class="co">#&gt; Species (versicolor)                | 0.93 (0.73, 1.13) | -1.60 (-1.98, -1.22) | -1.81 (-2.99, -0.62) | -1.80 (-2.99, -0.62)</span></span>
 <span><span class="co">#&gt; Species (virginica)                 | 1.58 (1.38, 1.79) | -2.12 (-2.66, -1.58) | -3.15 (-4.41, -1.90) | -3.19 (-4.50, -1.88)</span></span>
 <span><span class="co">#&gt; Petal Length                        |                   |  0.90 ( 0.78,  1.03) |  0.54 ( 0.00,  1.09) |  0.54 (-0.02,  1.09)</span></span>
-<span><span class="co">#&gt; Species (versicolor) * Petal Length |                   |                      |  0.29 (-0.30,  0.87) |  0.28 (-0.30,  0.87)</span></span>
-<span><span class="co">#&gt; Species (virginica) * Petal Length  |                   |                      |  0.45 (-0.12,  1.03) |  0.45 (-0.12,  1.03)</span></span>
+<span><span class="co">#&gt; Species (versicolor) × Petal Length |                   |                      |  0.29 (-0.30,  0.87) |  0.28 (-0.30,  0.87)</span></span>
+<span><span class="co">#&gt; Species (virginica) × Petal Length  |                   |                      |  0.45 (-0.12,  1.03) |  0.45 (-0.12,  1.03)</span></span>
 <span><span class="co">#&gt; Petal Width                         |                   |                      |                      |  0.03 (-0.28,  0.34)</span></span>
 <span><span class="co">#&gt; ----------------------------------------------------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Observations                        |               150 |                  150 |                  150 |                  150</span></span>
@@ -779,8 +835,8 @@ table is split into multiple parts.</p>
 <span><span class="co">#&gt; Species (versicolor)                | 0.93 (0.73, 1.13) | -1.60 (-1.98, -1.22)</span></span>
 <span><span class="co">#&gt; Species (virginica)                 | 1.58 (1.38, 1.79) | -2.12 (-2.66, -1.58)</span></span>
 <span><span class="co">#&gt; Petal Length                        |                   |  0.90 ( 0.78,  1.03)</span></span>
-<span><span class="co">#&gt; Species (versicolor) * Petal Length |                   |                     </span></span>
-<span><span class="co">#&gt; Species (virginica) * Petal Length  |                   |                     </span></span>
+<span><span class="co">#&gt; Species (versicolor) × Petal Length |                   |                     </span></span>
+<span><span class="co">#&gt; Species (virginica) × Petal Length  |                   |                     </span></span>
 <span><span class="co">#&gt; Petal Width                         |                   |                     </span></span>
 <span><span class="co">#&gt; ------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Observations                        |               150 |                  150</span></span>
@@ -791,8 +847,8 @@ table is split into multiple parts.</p>
 <span><span class="co">#&gt; Species (versicolor)                | -1.81 (-2.99, -0.62) | -1.80 (-2.99, -0.62)</span></span>
 <span><span class="co">#&gt; Species (virginica)                 | -3.15 (-4.41, -1.90) | -3.19 (-4.50, -1.88)</span></span>
 <span><span class="co">#&gt; Petal Length                        |  0.54 ( 0.00,  1.09) |  0.54 (-0.02,  1.09)</span></span>
-<span><span class="co">#&gt; Species (versicolor) * Petal Length |  0.29 (-0.30,  0.87) |  0.28 (-0.30,  0.87)</span></span>
-<span><span class="co">#&gt; Species (virginica) * Petal Length  |  0.45 (-0.12,  1.03) |  0.45 (-0.12,  1.03)</span></span>
+<span><span class="co">#&gt; Species (versicolor) × Petal Length |  0.29 (-0.30,  0.87) |  0.28 (-0.30,  0.87)</span></span>
+<span><span class="co">#&gt; Species (virginica) × Petal Length  |  0.45 (-0.12,  1.03) |  0.45 (-0.12,  1.03)</span></span>
 <span><span class="co">#&gt; Petal Width                         |                      |  0.03 (-0.28,  0.34)</span></span>
 <span><span class="co">#&gt; ---------------------------------------------------------------------------------</span></span>
 <span><span class="co">#&gt; Observations                        |                  150 |                  150</span></span></code></pre></div>
