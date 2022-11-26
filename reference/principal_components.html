@@ -3,7 +3,7 @@
 be used to perform a principal component analysis (PCA) or a factor analysis
 (FA). They return the loadings as a data frame, and various methods and
 functions are available to access / display other information (see the
-Details section)."><title>Principal Component Analysis (PCA) and Factor Analysis (FA) — factor_analysis • parameters</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.2/font.css" rel="stylesheet"><link href="../deps/JetBrains_Mono-0.4.2/font.css" rel="stylesheet"><link href="../deps/Roboto_Slab-0.4.2/font.css" rel="stylesheet"><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Principal Component Analysis (PCA) and Factor Analysis (FA) — factor_analysis"><meta property="og:description" content="The functions principal_components() and factor_analysis() can
+Details section)."><title>Principal Component Analysis (PCA) and Factor Analysis (FA) — factor_analysis • parameters</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.4/font.css" rel="stylesheet"><link href="../deps/JetBrains_Mono-0.4.4/font.css" rel="stylesheet"><link href="../deps/Roboto_Slab-0.4.4/font.css" rel="stylesheet"><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Principal Component Analysis (PCA) and Factor Analysis (FA) — factor_analysis"><meta property="og:description" content="The functions principal_components() and factor_analysis() can
 be used to perform a principal component analysis (PCA) or a factor analysis
 (FA). They return the loadings as a data frame, and various methods and
 functions are available to access / display other information (see the
@@ -18,7 +18,7 @@ Details section)."><meta property="og:image" content="https://easystats.github.i
     
     <a class="navbar-brand me-2" href="../index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.19.0.14</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.20.0.3</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -234,7 +234,11 @@ predicted data and original data is equal.</p></dd>
     </div>
     <div class="section level2">
     <h2 id="details">Details<a class="anchor" aria-label="anchor" href="#details"></a></h2>
-    <p><strong>Methods and Utilities</strong></p><ul><li><p><code><a href="n_factors.html">n_components()</a></code> and <code><a href="n_factors.html">n_factors()</a></code> automatically estimates the optimal
+    
+<div class="section">
+<h3 id="methods-and-utilities">Methods and Utilities<a class="anchor" aria-label="anchor" href="#methods-and-utilities"></a></h3>
+
+<ul><li><p><code><a href="n_factors.html">n_components()</a></code> and <code><a href="n_factors.html">n_factors()</a></code> automatically estimates the optimal
 number of dimensions to retain.</p></li>
 <li><p><code><a href="https://easystats.github.io/performance/reference/check_factorstructure.html" class="external-link">performance::check_factorstructure()</a></code> checks the suitability of the
 data for factor analysis using the sphericity (see
@@ -254,25 +258,45 @@ values, so it matches the original data frame.</p></li>
 <a href="https://easystats.github.io/see/articles/parameters.html#principal-component-analysis" class="external-link"><code><a href="https://rdrr.io/r/graphics/plot.default.html" class="external-link">plot()</a></code></a>
 visually displays the loadings (that requires the
 <a href="https://easystats.github.io/see/" class="external-link"><strong>see</strong>-package</a> to work).</p></li>
-</ul><p><strong>Complexity</strong></p>
+</ul></div>
+
+<div class="section">
+<h3 id="complexity">Complexity<a class="anchor" aria-label="anchor" href="#complexity"></a></h3>
+
+
 <p>Complexity represents the number of latent components needed to account
 for the observed variables. Whereas a perfect simple structure solution
 has a complexity of 1 in that each item would only load on one factor,
 a solution with evenly distributed items has a complexity greater than 1
 (<em>Hofman, 1978; Pettersson and Turkheimer, 2010</em>).</p>
-<p><strong>Uniqueness</strong></p>
+</div>
+
+<div class="section">
+<h3 id="uniqueness">Uniqueness<a class="anchor" aria-label="anchor" href="#uniqueness"></a></h3>
+
+
 <p>Uniqueness represents the variance that is 'unique' to the variable and
 not shared with other variables. It is equal to <code>1 – communality</code>
 (variance that is shared with other variables). A uniqueness of <code>0.20</code>
 suggests that <code>20%</code> or that variable's variance is not shared with other
 variables in the overall factor model. The greater 'uniqueness' the lower
 the relevance of the variable in the factor model.</p>
-<p><strong>MSA</strong></p>
+</div>
+
+<div class="section">
+<h3 id="msa">MSA<a class="anchor" aria-label="anchor" href="#msa"></a></h3>
+
+
 <p>MSA represents the Kaiser-Meyer-Olkin Measure of Sampling Adequacy
 (<em>Kaiser and Rice, 1974</em>) for each item. It indicates whether there is
 enough data for each factor give reliable results for the PCA. The value
 should be &gt; 0.6, and desirable values are &gt; 0.8 (<em>Tabachnick and Fidell, 2013</em>).</p>
-<p><strong>PCA or FA?</strong></p>
+</div>
+
+<div class="section">
+<h3 id="pca-or-fa-">PCA or FA?<a class="anchor" aria-label="anchor" href="#pca-or-fa-"></a></h3>
+
+
 <p>There is a simplified rule of thumb that may help do decide whether to run
 a factor analysis or a principal component analysis:</p><ul><li><p>Run <em>factor analysis</em> if you assume or wish to test a theoretical model of
 <em>latent factors</em> causing observed variables.</p></li>
@@ -280,7 +304,12 @@ a factor analysis or a principal component analysis:</p><ul><li><p>Run <em>facto
 correlated observed variables to a smaller set of important independent
 composite variables.</p></li>
 </ul><p>(Source: <a href="https://stats.stackexchange.com/q/1576/54740" class="external-link">CrossValidated</a>)</p>
-<p><strong>Computing Item Scores</strong></p>
+</div>
+
+<div class="section">
+<h3 id="computing-item-scores">Computing Item Scores<a class="anchor" aria-label="anchor" href="#computing-item-scores"></a></h3>
+
+
 <p>Use <code><a href="get_scores.html">get_scores()</a></code> to compute scores for the "subscales" represented by the
 extracted principal components. <code><a href="get_scores.html">get_scores()</a></code> takes the results from
 <code>principal_components()</code> and extracts the variables for each component found
@@ -290,13 +319,20 @@ This results in a sum score for each component from the PCA, which is on the
 same scale as the original, single items that were used to compute the PCA.
 One can also use <code><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict()</a></code> to back-predict scores for each component,
 to which one can provide <code>newdata</code> or a vector of <code>names</code> for the components.</p>
-<p><strong>Explained Variance and Eingenvalues</strong></p>
+</div>
+
+<div class="section">
+<h3 id="explained-variance-and-eingenvalues">Explained Variance and Eingenvalues<a class="anchor" aria-label="anchor" href="#explained-variance-and-eingenvalues"></a></h3>
+
+
 <p>Use <code><a href="https://rdrr.io/r/base/summary.html" class="external-link">summary()</a></code> to get the Eigenvalues and the explained variance for each
 extracted component. The eigenvectors and eigenvalues represent the "core"
 of a PCA: The eigenvectors (the principal components) determine the
 directions of the new feature space, and the eigenvalues determine their
 magnitude. In other words, the eigenvalues explain the variance of the
 data along the new feature axes.</p>
+</div>
+
     </div>
     <div class="section level2">
     <h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a></h2>
@@ -320,7 +356,7 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-in"><span><span class="co"># \donttest{</span></span></span>
 <span class="r-in"><span><span class="co"># Principal Component Analysis (PCA) -------------------</span></span></span>
 <span class="r-in"><span><span class="fu">principal_components</span><span class="op">(</span><span class="va">mtcars</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span>, n <span class="op">=</span> <span class="st">"all"</span>, threshold <span class="op">=</span> <span class="fl">0.2</span><span class="op">)</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> # Loadings from Principal Component Analysis (no rotation)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;"># Loadings from Principal Component Analysis (no rotation)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Variable |  PC1  |  PC2  | PC3  |  PC4  | PC5  |  PC6  | Complexity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> -------------------------------------------------------------------</span>
@@ -332,13 +368,14 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> wt       | 0.88  | -0.35 | 0.26 |       |      |       |    1.54   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> qsec     | -0.54 | -0.81 |      |       |      |       |    1.96   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> The 6 principal components accounted for 99.30% of the total variance of the original data (PC1 = 72.66%, PC2 = 16.52%, PC3 = 4.93%, PC4 = 2.26%, PC5 = 1.85%, PC6 = 1.08%).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">The 6 principal components accounted for 99.30% of the total variance of the original data (PC1 = 72.66%, PC2 = 16.52%, PC3 = 4.93%, PC4 = 2.26%, PC5 = 1.85%, PC6 = 1.08%).</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Automated number of components</span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st">"nFactors"</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
 <span class="r-in"><span>  <span class="fu">principal_components</span><span class="op">(</span><span class="va">mtcars</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>, n <span class="op">=</span> <span class="st">"auto"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> # Loadings from Principal Component Analysis (no rotation)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;"># Loadings from Principal Component Analysis (no rotation)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Variable |  PC1  | Complexity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> -----------------------------</span>
@@ -347,7 +384,8 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> disp     | 0.95  |    1.00   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> hp       | 0.91  |    1.00   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> The unique principal component accounted for 87.55% of the total variance of the original data.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">The unique principal component accounted for 87.55% of the total variance of the original data.</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Sparse PCA</span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://github.com/erichson/spca" class="external-link">"sparsepca"</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
@@ -355,7 +393,7 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-in"><span>  <span class="fu">principal_components</span><span class="op">(</span><span class="va">mtcars</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">7</span><span class="op">]</span>, n <span class="op">=</span> <span class="fl">4</span>, sparse <span class="op">=</span> <span class="st">"robust"</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-msg co"><span class="r-pr">#&gt;</span> Loading required package: sparsepca</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> # Loadings from Principal Component Analysis (no rotation)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;"># Loadings from Principal Component Analysis (no rotation)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Variable |  PC1  |  PC2  |  PC3  |  PC4  | Complexity</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> -----------------------------------------------------</span>
@@ -367,7 +405,8 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> wt       | 1.03  | -0.32 | 0.24  | -0.03 |    1.31   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> qsec     | -0.49 | -0.85 | 0.17  | 0.00  |    1.69   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> The 4 principal components accounted for 96.42% of the total variance of the original data (PC1 = 72.75%, PC2 = 16.53%, PC3 = 4.91%, PC4 = 2.24%).</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">The 4 principal components accounted for 96.42% of the total variance of the original data (PC1 = 72.75%, PC2 = 16.53%, PC3 = 4.91%, PC4 = 2.24%).</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Rotated PCA</span></span></span>
 <span class="r-in"><span><span class="kw">if</span> <span class="op">(</span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">require</a></span><span class="op">(</span><span class="st"><a href="https://personality-project.org/r/psych/" class="external-link">"psych"</a></span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span></span>
@@ -407,7 +446,7 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-in"><span><span class="op">}</span></span></span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Could not retrieve information about missing data. Returning only</span>
 <span class="r-wrn co"><span class="r-pr">#&gt;</span>   complete cases.</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> # Loadings from Factor Analysis (no rotation)</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;"># Loadings from Factor Analysis (no rotation)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Variable |  MR1  | Complexity | Uniqueness</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> ------------------------------------------</span>
@@ -416,7 +455,8 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> disp     | 0.93  |    1.00    |    0.13   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> hp       | 0.86  |    1.00    |    0.26   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> The unique latent factor accounted for 83.55% of the total variance of the original data.</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">The unique latent factor accounted for 83.55% of the total variance of the original data.</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc"><h2>On this page</h2>
