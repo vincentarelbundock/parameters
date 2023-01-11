@@ -10,7 +10,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.20.0.3</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.20.0.7</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -88,13 +88,18 @@
     <div class="section level2">
 <h2 class="pkg-version" data-toc-text="0.20.1" id="parameters-0201">parameters 0.20.1<a class="anchor" aria-label="anchor" href="#parameters-0201"></a></h2>
 <div class="section level3">
+<h3 id="general-0-20-1">General<a class="anchor" aria-label="anchor" href="#general-0-20-1"></a></h3>
+<ul><li>Added support for models of class <code>flic</code> and <code>flac</code> (<em>logistf</em>), <code>mmrm</code> (<em>mmrm</em>).</li>
+</ul></div>
+<div class="section level3">
 <h3 id="changes-0-20-1">Changes<a class="anchor" aria-label="anchor" href="#changes-0-20-1"></a></h3>
-<ul><li>
-<code><a href="../reference/model_parameters.html">model_parameters()</a></code> now includes a <code>Group</code> column <code>stanreg</code> or <code>brmsfit</code> models with random effects.</li>
+<ul><li><p><code><a href="../reference/model_parameters.html">model_parameters()</a></code> now includes a <code>Group</code> column <code>stanreg</code> or <code>brmsfit</code> models with random effects.</p></li>
+<li><p>The <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> method for <code><a href="../reference/model_parameters.html">model_parameters()</a></code> now uses the same pattern to print random effect variances for Bayesian models as for frequentist models.</p></li>
 </ul></div>
 <div class="section level3">
 <h3 id="bug-fix-0-20-1">Bug fix<a class="anchor" aria-label="anchor" href="#bug-fix-0-20-1"></a></h3>
-<ul><li>Fixed issue with the <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> method for <code><a href="../reference/compare_parameters.html">compare_parameters()</a></code>, which duplicated random effects parameters rows in some edge cases.</li>
+<ul><li><p>Fixed issue with the <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> method for <code><a href="../reference/compare_parameters.html">compare_parameters()</a></code>, which duplicated random effects parameters rows in some edge cases.</p></li>
+<li><p>Fixed issue with the <code><a href="https://rdrr.io/r/base/print.html" class="external-link">print()</a></code> method for <code><a href="../reference/compare_parameters.html">compare_parameters()</a></code>, which didn’t work properly when <code>ci=NULL</code>.</p></li>
 </ul></div>
 </div>
     <div class="section level2">
@@ -472,7 +477,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.6.9000.</p>
+  <p></p><p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.9000.</p>
 </div>
 
     </footer></div>
