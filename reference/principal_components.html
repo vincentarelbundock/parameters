@@ -3,7 +3,7 @@
 be used to perform a principal component analysis (PCA) or a factor analysis
 (FA). They return the loadings as a data frame, and various methods and
 functions are available to access / display other information (see the
-Details section)."><title>Principal Component Analysis (PCA) and Factor Analysis (FA) — factor_analysis • parameters</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.4/font.css" rel="stylesheet"><link href="../deps/JetBrains_Mono-0.4.4/font.css" rel="stylesheet"><link href="../deps/Roboto_Slab-0.4.4/font.css" rel="stylesheet"><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Principal Component Analysis (PCA) and Factor Analysis (FA) — factor_analysis"><meta property="og:description" content="The functions principal_components() and factor_analysis() can
+Details section)."><title>Principal Component Analysis (PCA) and Factor Analysis (FA) — factor_analysis • parameters</title><!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="../favicon-16x16.png"><link rel="icon" type="image/png" sizes="32x32" href="../favicon-32x32.png"><link rel="apple-touch-icon" type="image/png" sizes="180x180" href="../apple-touch-icon.png"><link rel="apple-touch-icon" type="image/png" sizes="120x120" href="../apple-touch-icon-120x120.png"><link rel="apple-touch-icon" type="image/png" sizes="76x76" href="../apple-touch-icon-76x76.png"><link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png"><script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"><link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet"><script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.6/font.css" rel="stylesheet"><link href="../deps/JetBrains_Mono-0.4.6/font.css" rel="stylesheet"><link href="../deps/Roboto_Slab-0.4.6/font.css" rel="stylesheet"><!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous"><!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Principal Component Analysis (PCA) and Factor Analysis (FA) — factor_analysis"><meta property="og:description" content="The functions principal_components() and factor_analysis() can
 be used to perform a principal component analysis (PCA) or a factor analysis
 (FA). They return the loadings as a data frame, and various methods and
 functions are available to access / display other information (see the
@@ -18,7 +18,7 @@ Details section)."><meta property="og:image" content="https://easystats.github.i
     
     <a class="navbar-brand me-2" href="../index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.20.1.1</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.21.0.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -126,10 +126,17 @@ Details section).</p>
 <span>  <span class="va">...</span></span>
 <span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu">rotated_data</span><span class="op">(</span><span class="va">pca_results</span><span class="op">)</span></span>
+<span><span class="fu">rotated_data</span><span class="op">(</span><span class="va">pca_results</span>, verbose <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S3 method for parameters_efa</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">object</span>, newdata <span class="op">=</span> <span class="cn">NULL</span>, names <span class="op">=</span> <span class="cn">NULL</span>, keep_na <span class="op">=</span> <span class="cn">TRUE</span>, <span class="va">...</span><span class="op">)</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span></span>
+<span>  <span class="va">object</span>,</span>
+<span>  newdata <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  names <span class="op">=</span> <span class="cn">NULL</span>,</span>
+<span>  keep_na <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  <span class="va">...</span></span>
+<span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># S3 method for parameters_efa</span></span>
 <span><span class="fu"><a href="https://rdrr.io/r/base/print.html" class="external-link">print</a></span><span class="op">(</span><span class="va">x</span>, digits <span class="op">=</span> <span class="fl">2</span>, sort <span class="op">=</span> <span class="cn">FALSE</span>, threshold <span class="op">=</span> <span class="cn">NULL</span>, labels <span class="op">=</span> <span class="cn">NULL</span>, <span class="va">...</span><span class="op">)</span></span>
@@ -202,6 +209,10 @@ interpretability and avoids overfitting. Can be <code>TRUE</code> or <code>"robu
 <dd><p>The output of the <code>principal_components()</code> function.</p></dd>
 
 
+<dt>verbose</dt>
+<dd><p>Toggle warnings.</p></dd>
+
+
 <dt>object</dt>
 <dd><p>An object of class <code>parameters_pca</code> or <code>parameters_efa</code></p></dd>
 
@@ -242,8 +253,8 @@ predicted data and original data is equal.</p></dd>
 number of dimensions to retain.</p></li>
 <li><p><code><a href="https://easystats.github.io/performance/reference/check_factorstructure.html" class="external-link">performance::check_factorstructure()</a></code> checks the suitability of the
 data for factor analysis using the sphericity (see
-<code><a href="https://easystats.github.io/performance/reference/check_sphericity_bartlett.html" class="external-link">performance::check_sphericity_bartlett()</a></code>) and the KMO (see
-<code><a href="https://easystats.github.io/performance/reference/check_kmo.html" class="external-link">performance::check_kmo()</a></code>) measure.</p></li>
+<code><a href="https://easystats.github.io/performance/reference/check_factorstructure.html" class="external-link">performance::check_sphericity_bartlett()</a></code>) and the KMO (see
+<code><a href="https://easystats.github.io/performance/reference/check_factorstructure.html" class="external-link">performance::check_kmo()</a></code>) measure.</p></li>
 <li><p><code><a href="https://easystats.github.io/performance/reference/check_itemscale.html" class="external-link">performance::check_itemscale()</a></code> computes various measures of internal
 consistencies applied to the (sub)scales (i.e., components) extracted from
 the PCA.</p></li>
@@ -375,14 +386,14 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-in"><span><span class="fu">principal_components</span><span class="op">(</span><span class="va">mtcars</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>, n <span class="op">=</span> <span class="st">"auto"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;"># Loadings from Principal Component Analysis (no rotation)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Variable |  PC1  | Complexity</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> -----------------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mpg      | -0.93 |    1.00   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> cyl      | 0.96  |    1.00   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> disp     | 0.95  |    1.00   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> hp       | 0.91  |    1.00   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Variable |  PC1  |  PC2  | Complexity</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -------------------------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mpg      | -0.93 | 0.20  |    1.10   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> cyl      | 0.96  | -0.04 |    1.00   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> disp     | 0.95  | -0.16 |    1.05   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hp       | 0.91  | 0.41  |    1.40   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">The unique principal component accounted for 87.55% of the total variance of the original data.</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">The 2 principal components accounted for 93.54% of the total variance of the original data (PC1 = 87.55%, PC2 = 5.99%).</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span></span></span>
 <span class="r-in"><span><span class="co"># Sparse PCA</span></span></span>
@@ -574,9 +585,7 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Variance Explained              | 0.782 | 0.080</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Variance Explained (Cumulative) | 0.782 | 0.861</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> Variance Explained (Proportion) | 0.908 | 0.092</span>
-<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">efa</span><span class="op">)</span></span></span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span> <span class="warning">Warning: </span>Could not retrieve information about missing data. Returning only</span>
-<span class="r-wrn co"><span class="r-pr">#&gt;</span>   complete cases.</span>
+<span class="r-in"><span><span class="fu"><a href="https://rdrr.io/r/stats/predict.html" class="external-link">predict</a></span><span class="op">(</span><span class="va">efa</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span>            MR1         MR2</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 1  -0.41953471 -0.35544083</span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> 2  -0.41953471 -0.35544083</span>
@@ -616,14 +625,14 @@ statistics (6th ed.). Boston: Pearson Education.</p></li>
 <span class="r-in"><span><span class="fu">factor_analysis</span><span class="op">(</span><span class="va">mtcars</span><span class="op">[</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">4</span><span class="op">]</span>, n <span class="op">=</span> <span class="st">"auto"</span><span class="op">)</span></span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #0000BB;"># Loadings from Factor Analysis (no rotation)</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> Variable |  MR1  | Complexity | Uniqueness</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> ------------------------------------------</span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> mpg      | -0.90 |    1.00    |    0.19   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> cyl      | 0.96  |    1.00    |    0.08   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> disp     | 0.93  |    1.00    |    0.13   </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> hp       | 0.86  |    1.00    |    0.26   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> Variable |  MR1  |   MR2    | Complexity | Uniqueness</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> -----------------------------------------------------</span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> mpg      | -0.89 | 3.15e-03 |    1.00    |    0.20   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> cyl      | 0.95  |   0.01   |    1.00    |    0.09   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> disp     | 0.95  |  -0.18   |    1.07    |    0.07   </span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> hp       | 0.87  |   0.19   |    1.09    |    0.21   </span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
-<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">The unique latent factor accounted for 83.55% of the total variance of the original data.</span></span>
+<span class="r-out co"><span class="r-pr">#&gt;</span> <span style="color: #BBBB00;">The 2 latent factors accounted for 85.78% of the total variance of the original data (MR1 = 84.09%, MR2 = 1.69%).</span></span>
 <span class="r-out co"><span class="r-pr">#&gt;</span> </span>
 <span class="r-in"><span><span class="co"># }</span></span></span>
 </code></pre></div>

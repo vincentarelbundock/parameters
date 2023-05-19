@@ -15,9 +15,9 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.4/font.css" rel="stylesheet">
-<link href="../deps/JetBrains_Mono-0.4.4/font.css" rel="stylesheet">
-<link href="../deps/Roboto_Slab-0.4.4/font.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.6/font.css" rel="stylesheet">
+<link href="../deps/JetBrains_Mono-0.4.6/font.css" rel="stylesheet">
+<link href="../deps/Roboto_Slab-0.4.6/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Summary of Model Parameters">
@@ -39,7 +39,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.20.1.1</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.21.0.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -177,9 +177,7 @@ including parameters <a href="https://easystats.github.io/parameters/reference/b
 <h3 id="bayesian">Bayesian<a class="anchor" aria-label="anchor" href="#bayesian"></a>
 </h3>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://richarddmorey.github.io/BayesFactor/" class="external-link">BayesFactor</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">BayesFactor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BayesFactor/man/correlationBF.html" class="external-link">correlationBF</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span>, <span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Width</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<code class="sourceCode R"><span><span class="fu">BayesFactor</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/BayesFactor/man/correlationBF.html" class="external-link">correlationBF</a></span><span class="op">(</span><span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Length</span>, <span class="va">iris</span><span class="op">$</span><span class="va">Sepal.Width</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Bayesian correlation analysis</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -209,31 +207,26 @@ indices for parameters summaries, including confidence intervals</p>
 </h3>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Species</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span> <span class="op">|&gt;</span></span>
-<span>  <span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span></span>
-<span>    omega_squared <span class="op">=</span> <span class="st">"partial"</span>,</span>
-<span>    eta_squared <span class="op">=</span> <span class="st">"partial"</span>,</span>
-<span>    epsilon_squared <span class="op">=</span> <span class="st">"partial"</span></span>
-<span>  <span class="op">)</span></span>
-<span><span class="co">#&gt; Parameter | Sum_Squares |  df | Mean_Square |      F |      p | Epsilon2</span></span>
-<span><span class="co">#&gt; ------------------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; Species   |       63.21 |   2 |       31.61 | 119.26 | &lt; .001 |     0.61</span></span>
-<span><span class="co">#&gt; Residuals |       38.96 | 147 |        0.27 |        |        |         </span></span>
+<span>  <span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span>effectsize_type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"omega"</span>, <span class="st">"eta"</span>, <span class="st">"epsilon"</span><span class="op">)</span><span class="op">)</span></span>
+<span><span class="co">#&gt; Parameter | Sum_Squares |  df | Mean_Square |      F |      p | Omega2 | Eta2 | Epsilon2</span></span>
+<span><span class="co">#&gt; ----------------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; Species   |       63.21 |   2 |       31.61 | 119.26 | &lt; .001 |   0.61 | 0.62 |     0.61</span></span>
+<span><span class="co">#&gt; Residuals |       38.96 | 147 |        0.27 |        |        |        |      |         </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Anova Table (Type 1 tests)</span></span></code></pre></div>
 <p>Let’s complicate things further with an interaction term:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/stats/aov.html" class="external-link">aov</a></span><span class="op">(</span><span class="va">Sepal.Length</span> <span class="op">~</span> <span class="va">Species</span> <span class="op">*</span> <span class="va">Sepal.Width</span>, data <span class="op">=</span> <span class="va">iris</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span></span>
-<span>    omega_squared <span class="op">=</span> <span class="st">"partial"</span>,</span>
-<span>    eta_squared <span class="op">=</span> <span class="st">"partial"</span>,</span>
-<span>    ci <span class="op">=</span> <span class="fl">.8</span></span>
+<span>    effectsize_type <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"omega"</span>, <span class="st">"eta"</span><span class="op">)</span>,</span>
+<span>    ci <span class="op">=</span> <span class="fl">0.8</span></span>
 <span>  <span class="op">)</span></span>
-<span><span class="co">#&gt; Parameter           | Sum_Squares |  df | Mean_Square |      F |      p | Eta2 (partial) |  Eta2 80% CI</span></span>
-<span><span class="co">#&gt; -------------------------------------------------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; Species             |       63.21 |   2 |       31.61 | 163.44 | &lt; .001 |           0.69 | [0.66, 1.00]</span></span>
-<span><span class="co">#&gt; Sepal.Width         |       10.95 |   1 |       10.95 |  56.64 | &lt; .001 |           0.28 | [0.23, 1.00]</span></span>
-<span><span class="co">#&gt; Species:Sepal.Width |        0.16 |   2 |        0.08 |   0.41 | 0.667  |       5.61e-03 | [0.00, 1.00]</span></span>
-<span><span class="co">#&gt; Residuals           |       27.85 | 144 |        0.19 |        |        |                |             </span></span>
+<span><span class="co">#&gt; Parameter           | Sum_Squares |  df | Mean_Square |      F |      p | Omega2 (partial) | Omega2 80% CI | Eta2 (partial) |  Eta2 80% CI</span></span>
+<span><span class="co">#&gt; ------------------------------------------------------------------------------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; Species             |       63.21 |   2 |       31.61 | 163.44 | &lt; .001 |             0.68 |  [0.65, 1.00] |           0.69 | [0.66, 1.00]</span></span>
+<span><span class="co">#&gt; Sepal.Width         |       10.95 |   1 |       10.95 |  56.64 | &lt; .001 |             0.27 |  [0.22, 1.00] |           0.28 | [0.23, 1.00]</span></span>
+<span><span class="co">#&gt; Species:Sepal.Width |        0.16 |   2 |        0.08 |   0.41 | 0.667  |             0.00 |  [0.00, 1.00] |       5.61e-03 | [0.00, 1.00]</span></span>
+<span><span class="co">#&gt; Residuals           |       27.85 | 144 |        0.19 |        |        |                  |               |                |             </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Anova Table (Type 1 tests)</span></span></code></pre></div>
 </div>
@@ -303,7 +296,7 @@ models and Bayesian models.</p>
 <span><span class="co">#&gt; cyl              |       0.10 |     0.12 | [ 0.00,     0.60] | -1.92 | 0.055</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Model: vs ~ poly(mpg, 2) + cyl (32 Observations)</span></span>
-<span><span class="co">#&gt; Residual standard deviation: 0.788 (df = 28)</span></span>
+<span><span class="co">#&gt; Residual standard deviation: 1.000 (df = 28)</span></span>
 <span><span class="co">#&gt; Tjur's R2: 0.670</span></span></code></pre></div>
 </div>
 <div class="section level3">
@@ -448,10 +441,10 @@ the <strong>rstanarm</strong> package:</p>
 <span>  <span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; Parameter   | Median |          95% CI |     pd |  Rhat |     ESS |                   Prior</span></span>
 <span><span class="co">#&gt; -------------------------------------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; (Intercept) |  52.75 | [ 41.13, 64.66] |   100% | 1.005 | 1081.00 | Normal (20.09 +- 15.07)</span></span>
-<span><span class="co">#&gt; wt          |  -8.09 | [-12.61, -3.72] |   100% | 1.006 | 1133.00 |  Normal (0.00 +- 15.40)</span></span>
-<span><span class="co">#&gt; cyl         |  -3.56 | [ -5.52, -1.66] | 99.95% | 1.003 | 1154.00 |   Normal (0.00 +- 8.44)</span></span>
-<span><span class="co">#&gt; wt:cyl      |   0.73 | [  0.10,  1.37] | 98.65% | 1.006 | 1034.00 |   Normal (0.00 +- 1.36)</span></span></code></pre></div>
+<span><span class="co">#&gt; (Intercept) |  52.71 | [ 39.71, 64.43] |   100% | 1.001 | 1415.00 | Normal (20.09 +- 15.07)</span></span>
+<span><span class="co">#&gt; wt          |  -8.04 | [-12.55, -3.30] | 99.95% | 1.000 | 1492.00 |  Normal (0.00 +- 15.40)</span></span>
+<span><span class="co">#&gt; cyl         |  -3.56 | [ -5.51, -1.47] | 99.92% | 1.001 | 1514.00 |   Normal (0.00 +- 8.44)</span></span>
+<span><span class="co">#&gt; wt:cyl      |   0.72 | [  0.05,  1.33] | 98.05% | 1.001 | 1402.00 |   Normal (0.00 +- 1.36)</span></span></code></pre></div>
 <p>Additionally, it also works for models from the <strong>brms</strong>
 package.</p>
 <p>For more complex models, specific model components can be printed
@@ -463,7 +456,7 @@ arguments.</p>
 <span><span class="fu"><a href="https://rdrr.io/r/base/Random.html" class="external-link">set.seed</a></span><span class="op">(</span><span class="fl">123</span><span class="op">)</span></span>
 <span></span>
 <span><span class="co"># fitting a model using `brms`</span></span>
-<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/pkg/brms/man/brm.html" class="external-link">brm</a></span><span class="op">(</span></span>
+<span><span class="va">model</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/warning.html" class="external-link">suppressWarnings</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/pkg/brms/man/brm.html" class="external-link">brm</a></span><span class="op">(</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/pkg/brms/man/brmsformula.html" class="external-link">bf</a></span><span class="op">(</span></span>
 <span>    <span class="va">count</span> <span class="op">~</span> <span class="va">persons</span> <span class="op">+</span> <span class="va">child</span> <span class="op">+</span> <span class="va">camper</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">persons</span><span class="op">)</span>,</span>
 <span>    <span class="va">zi</span> <span class="op">~</span> <span class="va">child</span> <span class="op">+</span> <span class="va">camper</span> <span class="op">+</span> <span class="op">(</span><span class="fl">1</span> <span class="op">|</span> <span class="va">persons</span><span class="op">)</span></span>
@@ -471,69 +464,75 @@ arguments.</p>
 <span>  data <span class="op">=</span> <span class="va">fish</span>,</span>
 <span>  family <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/pkg/brms/man/brmsfamily.html" class="external-link">zero_inflated_poisson</a></span><span class="op">(</span><span class="op">)</span>,</span>
 <span>  refresh <span class="op">=</span> <span class="fl">0</span></span>
-<span><span class="op">)</span></span>
+<span><span class="op">)</span><span class="op">)</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="va">model</span>, component <span class="op">=</span> <span class="st">"conditional"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="va">model</span>, component <span class="op">=</span> <span class="st">"conditional"</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # Fixed Effects</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Parameter   | Median |         95% CI |     pd |  Rhat |     ESS</span></span>
 <span><span class="co">#&gt; ----------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; (Intercept) |  -0.87 | [-1.88, -0.25] | 99.48% | 1.006 |  267.00</span></span>
-<span><span class="co">#&gt; persons     |   0.84 | [ 0.64,  1.13] |   100% | 1.005 |  323.00</span></span>
-<span><span class="co">#&gt; child       |  -1.15 | [-1.34, -0.97] |   100% | 1.000 | 2220.00</span></span>
-<span><span class="co">#&gt; camper1     |   0.73 | [ 0.55,  0.92] |   100% | 1.000 | 3251.00</span></span>
+<span><span class="co">#&gt; (Intercept) |  -0.87 | [-1.65, -0.27] | 99.40% | 1.029 |  160.00</span></span>
+<span><span class="co">#&gt; persons     |   0.84 | [ 0.65,  1.06] |   100% | 1.003 |  885.00</span></span>
+<span><span class="co">#&gt; child       |  -1.15 | [-1.34, -0.97] |   100% | 1.001 | 2978.00</span></span>
+<span><span class="co">#&gt; camper1     |   0.73 | [ 0.56,  0.92] |   100% | 1.001 | 2812.00</span></span>
 <span></span>
-<span><span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="va">model</span>, effects <span class="op">=</span> <span class="st">"all"</span>, component <span class="op">=</span> <span class="st">"all"</span><span class="op">)</span></span>
+<span><span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="va">model</span>, effects <span class="op">=</span> <span class="st">"all"</span>, component <span class="op">=</span> <span class="st">"all"</span>, verbose <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # Fixed Effects (Count Model)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Parameter   | Median |         95% CI |     pd |  Rhat |     ESS</span></span>
 <span><span class="co">#&gt; ----------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; (Intercept) |  -0.87 | [-1.88, -0.25] | 99.48% | 1.006 |  267.00</span></span>
-<span><span class="co">#&gt; persons     |   0.84 | [ 0.64,  1.13] |   100% | 1.005 |  323.00</span></span>
-<span><span class="co">#&gt; child       |  -1.15 | [-1.34, -0.97] |   100% | 1.000 | 2220.00</span></span>
-<span><span class="co">#&gt; camper1     |   0.73 | [ 0.55,  0.92] |   100% | 1.000 | 3251.00</span></span>
+<span><span class="co">#&gt; (Intercept) |  -0.87 | [-1.65, -0.27] | 99.40% | 1.029 |  160.00</span></span>
+<span><span class="co">#&gt; persons     |   0.84 | [ 0.65,  1.06] |   100% | 1.003 |  885.00</span></span>
+<span><span class="co">#&gt; child       |  -1.15 | [-1.34, -0.97] |   100% | 1.001 | 2978.00</span></span>
+<span><span class="co">#&gt; camper1     |   0.73 | [ 0.56,  0.92] |   100% | 1.001 | 2812.00</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; # Fixed Effects (Zero-Inflation Component)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Parameter   | Median |         95% CI |     pd |  Rhat |     ESS</span></span>
 <span><span class="co">#&gt; ----------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; (Intercept) |  -0.67 | [-2.24,  0.88] | 82.78% | 1.004 |  762.00</span></span>
-<span><span class="co">#&gt; child       |   1.86 | [ 1.18,  2.55] |   100% | 1.002 | 1652.00</span></span>
-<span><span class="co">#&gt; camper1     |  -0.84 | [-1.61, -0.10] | 98.60% | 1.003 |  968.00</span></span>
+<span><span class="co">#&gt; (Intercept) |  -0.64 | [-2.16,  0.83] | 83.15% | 1.001 | 1210.00</span></span>
+<span><span class="co">#&gt; child       |   1.87 | [ 1.24,  2.54] |   100% | 1.017 |  369.00</span></span>
+<span><span class="co">#&gt; camper1     |  -0.84 | [-1.53, -0.15] | 99.17% | 1.012 |  508.00</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; # Random Effects Variances</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Parameter               | Median |       95% CI |   pd |  Rhat |    ESS</span></span>
-<span><span class="co">#&gt; -----------------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; SD (Intercept: persons) |   0.11 | [0.01, 0.82] | 100% | 1.030 | 141.00</span></span>
+<span><span class="co">#&gt; Parameter               | Median |       95% CI |   pd |  Rhat |   ESS</span></span>
+<span><span class="co">#&gt; ----------------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; SD (Intercept: persons) |   0.11 | [0.00, 0.73] | 100% | 1.059 | 77.00</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; # Random Effects (Zero-Inflation Component)</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Parameter               | Median |       95% CI |   pd |  Rhat |    ESS</span></span>
 <span><span class="co">#&gt; -----------------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; SD (Intercept: persons) |   1.35 | [0.53, 3.49] | 100% | 1.004 | 689.00</span></span></code></pre></div>
+<span><span class="co">#&gt; SD (Intercept: persons) |   1.33 | [0.54, 3.46] | 100% | 1.013 | 595.00</span></span></code></pre></div>
 <p>To include information about the random effect parameters (group
 levels), set <code>group_level = TRUE</code>:</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="va">model</span>, effects <span class="op">=</span> <span class="st">"all"</span>, component <span class="op">=</span> <span class="st">"conditional"</span>, group_level <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span></span>
+<span>  <span class="va">model</span>,</span>
+<span>  effects <span class="op">=</span> <span class="st">"all"</span>,</span>
+<span>  component <span class="op">=</span> <span class="st">"conditional"</span>,</span>
+<span>  group_level <span class="op">=</span> <span class="cn">TRUE</span>,</span>
+<span>  verbose <span class="op">=</span> <span class="cn">FALSE</span></span>
+<span><span class="op">)</span></span>
 <span><span class="co">#&gt; # Fixed Effects</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; Parameter   | Median |         95% CI |     pd |  Rhat |     ESS</span></span>
 <span><span class="co">#&gt; ----------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; (Intercept) |  -0.87 | [-1.88, -0.25] | 99.48% | 1.006 |  267.00</span></span>
-<span><span class="co">#&gt; persons     |   0.84 | [ 0.64,  1.13] |   100% | 1.005 |  323.00</span></span>
-<span><span class="co">#&gt; child       |  -1.15 | [-1.34, -0.97] |   100% | 1.000 | 2220.00</span></span>
-<span><span class="co">#&gt; camper1     |   0.73 | [ 0.55,  0.92] |   100% | 1.000 | 3251.00</span></span>
+<span><span class="co">#&gt; (Intercept) |  -0.87 | [-1.65, -0.27] | 99.40% | 1.029 |  160.00</span></span>
+<span><span class="co">#&gt; persons     |   0.84 | [ 0.65,  1.06] |   100% | 1.003 |  885.00</span></span>
+<span><span class="co">#&gt; child       |  -1.15 | [-1.34, -0.97] |   100% | 1.001 | 2978.00</span></span>
+<span><span class="co">#&gt; camper1     |   0.73 | [ 0.56,  0.92] |   100% | 1.001 | 2812.00</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; # Random Effects: persons</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Parameter   |    Median |        95% CI |     pd |  Rhat |    ESS</span></span>
-<span><span class="co">#&gt; -----------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; persons.1   | -2.56e-03 | [-0.44, 0.50] | 52.95% | 1.004 | 329.00</span></span>
-<span><span class="co">#&gt; persons.2   |      0.03 | [-0.19, 0.59] | 65.95% | 1.010 | 206.00</span></span>
-<span><span class="co">#&gt; persons.3   | -7.93e-03 | [-0.25, 0.25] | 56.77% | 1.005 | 448.00</span></span>
-<span><span class="co">#&gt; persons.4   |  2.72e-03 | [-0.30, 0.36] | 52.95% | 1.004 | 670.00</span></span>
-<span><span class="co">#&gt; (Intercept) |      0.11 | [ 0.01, 0.82] |   100% | 1.030 | 141.00</span></span></code></pre></div>
+<span><span class="co">#&gt; Parameter   |    Median |        95% CI |     pd |  Rhat |   ESS</span></span>
+<span><span class="co">#&gt; ----------------------------------------------------------------</span></span>
+<span><span class="co">#&gt; persons.1   | -2.70e-03 | [-0.39, 0.72] | 53.33% | 1.060 | 70.00</span></span>
+<span><span class="co">#&gt; persons.2   |      0.02 | [-0.20, 0.71] | 65.90% | 1.084 | 54.00</span></span>
+<span><span class="co">#&gt; persons.3   |     -0.01 | [-0.28, 0.59] | 58.75% | 1.095 | 49.00</span></span>
+<span><span class="co">#&gt; persons.4   |  3.26e-03 | [-0.33, 0.73] | 53.47% | 1.075 | 61.00</span></span>
+<span><span class="co">#&gt; (Intercept) |      0.11 | [ 0.00, 0.73] |   100% | 1.059 | 77.00</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -546,9 +545,7 @@ structural models.</p>
 (EFA)<a class="anchor" aria-label="anchor" href="#principal-component-analysis-pca-and-exploratory-factor-analysis-efa"></a>
 </h3>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://personality-project.org/r/psych/" class="external-link">psych</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/principal.html" class="external-link">pca</a></span><span class="op">(</span><span class="va">mtcars</span>, nfactors <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<code class="sourceCode R"><span><span class="fu">psych</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/psych/man/principal.html" class="external-link">pca</a></span><span class="op">(</span><span class="va">mtcars</span>, nfactors <span class="op">=</span> <span class="fl">3</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # Rotated loadings from Principal Component Analysis (varimax-rotation)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -570,9 +567,7 @@ structural models.</p>
 <p>We will avoid displaying a graph while carrying out factor
 analysis:</p>
 <div class="sourceCode" id="cb19"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="http://factominer.free.fr" class="external-link">FactoMineR</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="fu">FactoMineR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/FactoMineR/man/FAMD.html" class="external-link">FAMD</a></span><span class="op">(</span><span class="va">iris</span>, ncp <span class="op">=</span> <span class="fl">3</span>, graph <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<code class="sourceCode R"><span><span class="fu">FactoMineR</span><span class="fu">::</span><span class="fu"><a href="https://rdrr.io/pkg/FactoMineR/man/FAMD.html" class="external-link">FAMD</a></span><span class="op">(</span><span class="va">iris</span>, ncp <span class="op">=</span> <span class="fl">3</span>, graph <span class="op">=</span> <span class="cn">FALSE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="../reference/model_parameters.html">parameters</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # Loadings from Factor Analysis (no rotation)</span></span>
 <span><span class="co">#&gt; </span></span>
@@ -640,7 +635,7 @@ from the <strong>metafor</strong> package.</p>
 <div class="sourceCode" id="cb21"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://www.metafor-project.org" class="external-link">metafor</a></span><span class="op">)</span></span>
 <span></span>
-<span><span class="va">mydat</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
+<span><span class="va">mydat</span> <span class="op">&lt;&lt;-</span> <span class="fu"><a href="https://rdrr.io/r/base/data.frame.html" class="external-link">data.frame</a></span><span class="op">(</span></span>
 <span>  effectsize <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="op">-</span><span class="fl">0.393</span>, <span class="fl">0.675</span>, <span class="fl">0.282</span>, <span class="op">-</span><span class="fl">1.398</span><span class="op">)</span>,</span>
 <span>  standarderror <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="fl">0.317</span>, <span class="fl">0.317</span>, <span class="fl">0.13</span>, <span class="fl">0.36</span><span class="op">)</span></span>
 <span><span class="op">)</span></span>

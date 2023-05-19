@@ -15,9 +15,9 @@
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="../apple-touch-icon-60x60.png">
 <script src="../deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link href="../deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.4/font.css" rel="stylesheet">
-<link href="../deps/JetBrains_Mono-0.4.4/font.css" rel="stylesheet">
-<link href="../deps/Roboto_Slab-0.4.4/font.css" rel="stylesheet">
+<script src="../deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="../deps/Roboto-0.4.6/font.css" rel="stylesheet">
+<link href="../deps/JetBrains_Mono-0.4.6/font.css" rel="stylesheet">
+<link href="../deps/Roboto_Slab-0.4.6/font.css" rel="stylesheet">
 <!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
 <!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="../pkgdown.js"></script><meta property="og:title" content="Formatting Model Parameters">
@@ -39,7 +39,7 @@
     
     <a class="navbar-brand me-2" href="../index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.20.1.1</small>
+    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.21.0.2</small>
 
     
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -246,18 +246,17 @@ you see that the statistic-column is no longer named <code>t</code>, but
 <code>df_residuals</code> will be renamed to <code>df</code>.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://easystats.github.io/insight/" class="external-link">insight</a></span><span class="op">)</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://magrittr.tidyverse.org" class="external-link">magrittr</a></span><span class="op">)</span></span>
-<span><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/standardize_names.html" class="external-link">standardize_names</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span><span class="va">model</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/standardize_names.html" class="external-link">standardize_names</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Parameter"   "Coefficient" "SE"          "CI"          "CI_low"     </span></span>
 <span><span class="co">#&gt; [6] "CI_high"     "Statistic"   "df"          "p"</span></span></code></pre></div>
 <p>Furthermore, you can request “broom”-style for column names:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/standardize_names.html" class="external-link">standardize_names</a></span><span class="op">(</span>style <span class="op">=</span> <span class="st">"broom"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<code class="sourceCode R"><span><span class="va">model</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/standardize_names.html" class="external-link">standardize_names</a></span><span class="op">(</span>style <span class="op">=</span> <span class="st">"broom"</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/colnames.html" class="external-link">colnames</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "term"       "estimate"   "std.error"  "conf.level" "conf.low"  </span></span>
 <span><span class="co">#&gt; [6] "conf.high"  "statistic"  "df.error"   "p.value"</span></span></code></pre></div>
@@ -282,15 +281,14 @@ intervals.</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span><span class="va">model</span>, conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 6 × 7</span></span></span>
-<span><span class="co">#&gt;   term                   estimate std.error statistic   p.value conf.low conf.…¹</span></span>
-<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> (Intercept)               3.81     0.058<span style="text-decoration: underline;">2</span>    65.5   4.61<span style="color: #949494;">e</span><span style="color: #BB0000;">-109</span>    3.70    3.93 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> poly(Sepal.Length, 2)1    4.06     0.467      8.70  7.00<span style="color: #949494;">e</span><span style="color: #BB0000;">- 15</span>    3.14    4.98 </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> poly(Sepal.Length, 2)2   -<span style="color: #BB0000;">1.30</span>     0.315     -<span style="color: #BB0000;">4.14</span>  5.98<span style="color: #949494;">e</span><span style="color: #BB0000;">-  5</span>   -<span style="color: #BB0000;">1.92</span>   -<span style="color: #BB0000;">0.680</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Speciesversicolor        -<span style="color: #BB0000;">1.01</span>     0.278     -<span style="color: #BB0000;">3.62</span>  4.12<span style="color: #949494;">e</span><span style="color: #BB0000;">-  4</span>   -<span style="color: #BB0000;">1.56</span>   -<span style="color: #BB0000;">0.456</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Speciesvirginica         -<span style="color: #BB0000;">0.991</span>    0.285     -<span style="color: #BB0000;">3.48</span>  6.72<span style="color: #949494;">e</span><span style="color: #BB0000;">-  4</span>   -<span style="color: #BB0000;">1.55</span>   -<span style="color: #BB0000;">0.428</span></span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Petlen(3,7]              -<span style="color: #BB0000;">0.136</span>    0.282     -<span style="color: #BB0000;">0.482</span> 6.30<span style="color: #949494;">e</span><span style="color: #BB0000;">-  1</span>   -<span style="color: #BB0000;">0.693</span>   0.421</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># … with abbreviated variable name ¹​conf.high</span></span></span></code></pre></div>
+<span><span class="co">#&gt;   term                 estimate std.error statistic   p.value conf.low conf.high</span></span>
+<span><span class="co">#&gt;   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>                   <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>    <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">1</span> (Intercept)             3.81     0.058<span style="text-decoration: underline;">2</span>    65.5   4.61<span style="color: #949494;">e</span><span style="color: #BB0000;">-109</span>    3.70      3.93 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">2</span> poly(Sepal.Length, …    4.06     0.467      8.70  7.00<span style="color: #949494;">e</span><span style="color: #BB0000;">- 15</span>    3.14      4.98 </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span> poly(Sepal.Length, …   -<span style="color: #BB0000;">1.30</span>     0.315     -<span style="color: #BB0000;">4.14</span>  5.98<span style="color: #949494;">e</span><span style="color: #BB0000;">-  5</span>   -<span style="color: #BB0000;">1.92</span>     -<span style="color: #BB0000;">0.680</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span> Speciesversicolor      -<span style="color: #BB0000;">1.01</span>     0.278     -<span style="color: #BB0000;">3.62</span>  4.12<span style="color: #949494;">e</span><span style="color: #BB0000;">-  4</span>   -<span style="color: #BB0000;">1.56</span>     -<span style="color: #BB0000;">0.456</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span> Speciesvirginica       -<span style="color: #BB0000;">0.991</span>    0.285     -<span style="color: #BB0000;">3.48</span>  6.72<span style="color: #949494;">e</span><span style="color: #BB0000;">-  4</span>   -<span style="color: #BB0000;">1.55</span>     -<span style="color: #BB0000;">0.428</span></span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">6</span> Petlen(3,7]            -<span style="color: #BB0000;">0.136</span>    0.282     -<span style="color: #BB0000;">0.482</span> 6.30<span style="color: #949494;">e</span><span style="color: #BB0000;">-  1</span>   -<span style="color: #BB0000;">0.693</span>     0.421</span></span></code></pre></div>
 <p>Some improvements according to readability could be collapsing and
 formatting the confidence intervals, and maybe the p-values. This would
 require some effort, for instance, to format the values of the lower and
@@ -304,8 +302,8 @@ follow a certain pattern to be recognized, and this pattern may either
 be the naming convention from <em>broom</em> or the <a href="https://easystats.github.io/easystats/" class="external-link"><em>easystats</em>
 packages</a>.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span>conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<code class="sourceCode R"><span><span class="va">model</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span>conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/format_table.html" class="external-link">format_table</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                     term estimate std.error statistic p.value       conf.int</span></span>
 <span><span class="co">#&gt; 1            (Intercept)     3.81      0.06     65.50  &lt; .001 [ 3.70,  3.93]</span></span>
@@ -319,8 +317,8 @@ degrees of freedom are the same for each parameter, then this
 information is included in the statistic-column. This is usually the
 default for <code><a href="../reference/model_parameters.html">model_parameters()</a></code>:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<code class="sourceCode R"><span><span class="va">model</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/format_table.html" class="external-link">format_table</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt;                   Parameter Coefficient   SE         95% CI t(144)      p</span></span>
 <span><span class="co">#&gt; 1               (Intercept)        3.81 0.06 [ 3.70,  3.93]  65.50 &lt; .001</span></span>
@@ -353,9 +351,9 @@ console or inside rmarkdown documents. The data frame then looks more
 <p>Putting all this together allows us to create nice tabular outputs of
 parameters tables. This can be done using <em>broom</em>:</p>
 <div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span>conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/format_table.html" class="external-link">format_table</a></span><span class="op">(</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<code class="sourceCode R"><span><span class="va">model</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span>conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/format_table.html" class="external-link">format_table</a></span><span class="op">(</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/export_table.html" class="external-link">export_table</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; term                   | estimate | std.error | statistic | p.value |       conf.int</span></span>
 <span><span class="co">#&gt; ------------------------------------------------------------------------------------</span></span>
@@ -394,10 +392,10 @@ or to specify the alignment for each column individually.</p>
 <code>align = "lcccrr"</code> would left-align the first column, center
 columns two to four, and right-align the last two columns.</p>
 <div class="sourceCode" id="cb15"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">model</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
-<span>  <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span>conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<code class="sourceCode R"><span><span class="va">model</span> <span class="op">|&gt;</span></span>
+<span>  <span class="fu"><a href="https://generics.r-lib.org/reference/tidy.html" class="external-link">tidy</a></span><span class="op">(</span>conf.int <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="co"># parenthesis look better in markdown-tables, so we use "brackets" here</span></span>
-<span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/format_table.html" class="external-link">format_table</a></span><span class="op">(</span>ci_brackets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"("</span>, <span class="st">")"</span><span class="op">)</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span></span>
+<span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/format_table.html" class="external-link">format_table</a></span><span class="op">(</span>ci_brackets <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">"("</span>, <span class="st">")"</span><span class="op">)</span><span class="op">)</span> <span class="op">|&gt;</span></span>
 <span>  <span class="fu"><a href="https://easystats.github.io/insight/reference/export_table.html" class="external-link">export_table</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"markdown"</span>, caption <span class="op">=</span> <span class="st">"My Table"</span>, align <span class="op">=</span> <span class="st">"lcccrr"</span><span class="op">)</span></span></code></pre></div>
 <table style="width:100%;" class="table">
 <caption>My Table</caption>
@@ -479,7 +477,7 @@ markdown-documents into Word or PDF. <code><a href="https://easystats.github.io/
 some default settings that have proven to work well for markdown, PDF or
 Word tables.</p>
 <div class="sourceCode" id="cb16"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">print_md</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">print_md</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <table class="table">
 <colgroup>
 <col width="33%">
@@ -554,15 +552,27 @@ wrapper for <code><a href="https://easystats.github.io/insight/reference/format_
 the advantage that it will be properly rendered when exporting to
 PDF.</p>
 <div class="sourceCode" id="cb17"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">print_html</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">print_html</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
 <div id="niwbgbfclw" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#niwbgbfclw table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#niwbgbfclw thead, #niwbgbfclw tbody, #niwbgbfclw tfoot, #niwbgbfclw tr, #niwbgbfclw td, #niwbgbfclw th {
+  border-style: none;
+}
+
+#niwbgbfclw p {
+  margin: 0;
+  padding: 0;
 }
 
 #niwbgbfclw .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -583,18 +593,6 @@ PDF.</p>
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#niwbgbfclw .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #niwbgbfclw .gt_caption {
@@ -618,12 +616,24 @@ PDF.</p>
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#niwbgbfclw .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #niwbgbfclw .gt_bottom_border {
@@ -697,6 +707,10 @@ PDF.</p>
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#niwbgbfclw .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #niwbgbfclw .gt_group_heading {
@@ -798,6 +812,10 @@ PDF.</p>
   border-top-width: 2px;
 }
 
+#niwbgbfclw .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #niwbgbfclw .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -847,6 +865,16 @@ PDF.</p>
   border-top-color: #D3D3D3;
 }
 
+#niwbgbfclw .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #niwbgbfclw .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -877,8 +905,8 @@ PDF.</p>
 #niwbgbfclw .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -935,10 +963,9 @@ PDF.</p>
 }
 
 #niwbgbfclw .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #niwbgbfclw .gt_asterisk {
@@ -966,8 +993,8 @@ PDF.</p>
   text-indent: 25px;
 }
 </style>
-<table class="table gt_table">
-<thead class="gt_col_headings"><tr>
+<table class="table gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
 <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Parameter">Parameter</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Coefficient">Coefficient</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="SE">SE</th>
@@ -1036,15 +1063,27 @@ inside markdown-documents. A wrapper around these both is
 <code><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">display()</a></code>, which either calls <code><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">print_md()</a></code> or
 <code><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">print_html()</a></code>.</p>
 <div class="sourceCode" id="cb18"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">display</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"html"</span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="../reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://easystats.github.io/insight/reference/display.html" class="external-link">display</a></span><span class="op">(</span>format <span class="op">=</span> <span class="st">"html"</span><span class="op">)</span></span></code></pre></div>
 <div id="ghawkzfndf" style="padding-left:0px;padding-right:0px;padding-top:10px;padding-bottom:10px;overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+<style>#ghawkzfndf table {
+  font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#ghawkzfndf thead, #ghawkzfndf tbody, #ghawkzfndf tfoot, #ghawkzfndf tr, #ghawkzfndf td, #ghawkzfndf th {
+  border-style: none;
+}
+
+#ghawkzfndf p {
+  margin: 0;
+  padding: 0;
 }
 
 #ghawkzfndf .gt_table {
   display: table;
   border-collapse: collapse;
+  line-height: normal;
   margin-left: auto;
   margin-right: auto;
   color: #333333;
@@ -1065,18 +1104,6 @@ inside markdown-documents. A wrapper around these both is
   border-left-style: none;
   border-left-width: 2px;
   border-left-color: #D3D3D3;
-}
-
-#ghawkzfndf .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
 }
 
 #ghawkzfndf .gt_caption {
@@ -1100,12 +1127,24 @@ inside markdown-documents. A wrapper around these both is
   color: #333333;
   font-size: 85%;
   font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
+  padding-top: 3px;
+  padding-bottom: 5px;
   padding-left: 5px;
   padding-right: 5px;
   border-top-color: #FFFFFF;
   border-top-width: 0;
+}
+
+#ghawkzfndf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
 }
 
 #ghawkzfndf .gt_bottom_border {
@@ -1179,6 +1218,10 @@ inside markdown-documents. A wrapper around these both is
   overflow-x: hidden;
   display: inline-block;
   width: 100%;
+}
+
+#ghawkzfndf .gt_spanner_row {
+  border-bottom-style: hidden;
 }
 
 #ghawkzfndf .gt_group_heading {
@@ -1280,6 +1323,10 @@ inside markdown-documents. A wrapper around these both is
   border-top-width: 2px;
 }
 
+#ghawkzfndf .gt_row_group_first th {
+  border-top-width: 2px;
+}
+
 #ghawkzfndf .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
@@ -1329,6 +1376,16 @@ inside markdown-documents. A wrapper around these both is
   border-top-color: #D3D3D3;
 }
 
+#ghawkzfndf .gt_last_grand_summary_row_top {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: double;
+  border-bottom-width: 6px;
+  border-bottom-color: #D3D3D3;
+}
+
 #ghawkzfndf .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
@@ -1359,8 +1416,8 @@ inside markdown-documents. A wrapper around these both is
 #ghawkzfndf .gt_footnote {
   margin: 0px;
   font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
+  padding-top: 4px;
+  padding-bottom: 4px;
   padding-left: 5px;
   padding-right: 5px;
 }
@@ -1417,10 +1474,9 @@ inside markdown-documents. A wrapper around these both is
 }
 
 #ghawkzfndf .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
+  position: initial;
 }
 
 #ghawkzfndf .gt_asterisk {
@@ -1448,8 +1504,8 @@ inside markdown-documents. A wrapper around these both is
   text-indent: 25px;
 }
 </style>
-<table class="table gt_table">
-<thead class="gt_col_headings"><tr>
+<table class="table gt_table" data-quarto-disable-processing="false" data-quarto-bootstrap="false">
+<thead><tr class="gt_col_headings">
 <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1" scope="col" id="Parameter">Parameter</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="Coefficient">Coefficient</th>
       <th class="gt_col_heading gt_columns_bottom_border gt_center" rowspan="1" colspan="1" scope="col" id="SE">SE</th>
