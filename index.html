@@ -5,7 +5,6 @@
 <meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="description" content="Utilities for processing the parameters of various statistical models. Beyond computing p values, CIs, and other indices for a wide variety of models (see list of supported models using the function insight::supported_models()), this package implements features like bootstrapping or simulating of parameters and models, feature reduction (feature extraction and variable selection) as well as functions to describe data and variable characteristics (e.g. skewness, kurtosis, smoothness or distribution).">
 <title>Processing of Model Parameters • parameters</title>
 <!-- favicons --><link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
 <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
@@ -13,104 +12,77 @@
 <link rel="apple-touch-icon" type="image/png" sizes="120x120" href="apple-touch-icon-120x120.png">
 <link rel="apple-touch-icon" type="image/png" sizes="76x76" href="apple-touch-icon-76x76.png">
 <link rel="apple-touch-icon" type="image/png" sizes="60x60" href="apple-touch-icon-60x60.png">
-<script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.2.2/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.2.2/bootstrap.bundle.min.js"></script><link href="deps/Roboto-0.4.6/font.css" rel="stylesheet">
-<link href="deps/JetBrains_Mono-0.4.6/font.css" rel="stylesheet">
-<link href="deps/Roboto_Slab-0.4.6/font.css" rel="stylesheet">
-<!-- Font Awesome icons --><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/v4-shims.min.css" integrity="sha256-wZjR52fzng1pJHwx4aV2AO3yyTOXrcDW7jBpJtTwVxw=" crossorigin="anonymous">
-<!-- bootstrap-toc --><script src="https://cdn.jsdelivr.net/gh/afeld/bootstrap-toc@v1.0.1/dist/bootstrap-toc.min.js" integrity="sha256-4veVQbu7//Lk5TSmc7YV48MxtMy98e26cf5MrgZYnwo=" crossorigin="anonymous"></script><!-- headroom.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/headroom.min.js" integrity="sha256-AsUX4SJE1+yuDu5+mAVzJbuYNPHj/WroHuZ8Ir/CkE0=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/headroom/0.11.0/jQuery.headroom.min.js" integrity="sha256-ZX/yNShbjqsohH1k95liqY9Gd8uOiE1S4vZc+9KQ1K4=" crossorigin="anonymous"></script><!-- clipboard.js --><script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.6/clipboard.min.js" integrity="sha256-inc5kl9MA1hkeYUt+EC3BhlIgyp/2jDIyBLS6k3UxPI=" crossorigin="anonymous"></script><!-- search --><script src="https://cdnjs.cloudflare.com/ajax/libs/fuse.js/6.4.6/fuse.js" integrity="sha512-zv6Ywkjyktsohkbp9bb45V6tEMoWhzFzXis+LrMehmJZZSys19Yxf1dopHx7WzIKxr5tK2dVcYmaCk2uqdjF4A==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/autocomplete.js/0.38.0/autocomplete.jquery.min.js" integrity="sha512-GU9ayf+66Xx2TmpxqJpliWbT5PiGYxpaG8rfnBEk1LL8l1KGkRShhngwdXK1UgqhAzWpZHSiYPc09/NwDQIGyg==" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mark.js/8.11.1/mark.min.js" integrity="sha512-5CYOlHXGh6QpOFA/TeTylKLWfB3ftPsde7AnmhuitiTX4K5SqCLBeKro6sPS8ilsz1Q4NRx3v8Ko2IBiszzdww==" crossorigin="anonymous"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Processing of Model Parameters">
+<script src="lightswitch.js"></script><script src="katex-auto.js"></script><script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/Roboto-0.4.9/font.css" rel="stylesheet">
+<link href="deps/JetBrains_Mono-0.4.9/font.css" rel="stylesheet">
+<link href="deps/Roboto_Slab-0.4.9/font.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
+<script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><link href="deps/KaTex-0.16.10/katex.min.css" rel="stylesheet">
+<script src="deps/KaTex-0.16.10/katex.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Processing of Model Parameters">
+<meta name="description" content="Utilities for processing the parameters of various statistical models. Beyond computing p values, CIs, and other indices for a wide variety of models (see list of supported models using the function insight::supported_models()), this package implements features like bootstrapping or simulating of parameters and models, feature reduction (feature extraction and variable selection) as well as functions to describe data and variable characteristics (e.g. skewness, kurtosis, smoothness or distribution).">
 <meta property="og:description" content="Utilities for processing the parameters of various statistical models. Beyond computing p values, CIs, and other indices for a wide variety of models (see list of supported models using the function insight::supported_models()), this package implements features like bootstrapping or simulating of parameters and models, feature reduction (feature extraction and variable selection) as well as functions to describe data and variable characteristics (e.g. skewness, kurtosis, smoothness or distribution).">
 <meta property="og:image" content="https://easystats.github.io/parameters/reference/figures/card.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:creator" content="@easystats4u">
 <meta name="twitter:site" content="@easystats4u">
-<!-- mathjax --><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha256-nvJJv9wWKEm88qvoQl9ekL2J+k/RWIsaSScxxlsrv8k=" crossorigin="anonymous"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/config/TeX-AMS-MML_HTMLorMML.js" integrity="sha256-84DKXVJXs0/F8OTMzX4UR909+jtl4G7SPypPavF+GfA=" crossorigin="anonymous"></script><!--[if lt IE 9]>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<![endif]-->
 </head>
 <body>
     <a href="#main" class="visually-hidden-focusable">Skip to contents</a>
-    
 
-    <nav class="navbar fixed-top navbar-light navbar-expand-lg bg-light"><div class="container">
-    
+
+    <nav class="navbar navbar-expand-lg fixed-top " aria-label="Site navigation"><div class="container">
+
     <a class="navbar-brand me-2" href="index.html">parameters</a>
 
-    <small class="nav-text text-default me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.21.0.2</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.23.0.11</small>
 
-    
+
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
 
     <div id="navbar" class="collapse navbar-collapse ms-3">
       <ul class="navbar-nav me-auto">
-<li class="nav-item">
-  <a class="nav-link" href="reference/index.html" aria-label="Reference">
-    <span class="fa fa fa fa-file-code"></span>
-     
-    Reference
-  </a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="articles/index.html" aria-label="Articles">
-    <span class="fa fa fa fa-book-reader"></span>
-     
-    Articles
-  </a>
-</li>
-<li class="nav-item">
-  <a class="nav-link" href="news/index.html" aria-label="News">
-    <span class="fa fa fa fa-newspaper"></span>
-     
-    News
-  </a>
-</li>
+<li class="nav-item"><a class="nav-link" href="reference/index.html" aria-label="Reference"><span class="fa fa-file-code"></span> Reference</a></li>
+<li class="nav-item"><a class="nav-link" href="articles/index.html" aria-label="Articles"><span class="fa fa-book-reader"></span> Articles</a></li>
+<li class="nav-item"><a class="nav-link" href="news/index.html" aria-label="News"><span class="fa fa-newspaper"></span> News</a></li>
       </ul>
-<form class="form-inline my-2 my-lg-0" role="search">
-        <input type="search" class="form-control me-sm-2" aria-label="Toggle navigation" name="search-input" data-search-index="search.json" id="search-input" placeholder="Search for" autocomplete="off">
-</form>
-
-      <ul class="navbar-nav">
+<ul class="navbar-nav">
+<li class="nav-item"><form class="form-inline" role="search">
+ <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
+</form></li>
 <li class="nav-item dropdown">
-  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-expanded="false" aria-haspopup="true" id="dropdown--easystats" aria-label="easystats">
-    <span class="fab fa fab fa-r-project"></span>
-     
-    easystats
-  </a>
-  <div class="dropdown-menu" aria-labelledby="dropdown--easystats">
-    <a class="external-link dropdown-item" href="https://easystats.github.io/bayestestR/">bayestestR</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/correlation/">correlation</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/datawizard/">datawizard</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/easystats/">easystats</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/effectsize/">effectsize</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/insight/">insight</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/modelbased/">modelbased</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/performance/">performance</a>
-    <a class="dropdown-item" href="https://easystats.github.io/parameters/">parameters</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/report/">report</a>
-    <a class="external-link dropdown-item" href="https://easystats.github.io/see/">see</a>
-  </div>
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-easystats" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="easystats"><span class="fa fab fa-r-project"></span> easystats</button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-easystats">
+<li><a class="external-link dropdown-item" href="https://easystats.github.io/bayestestR/">bayestestR</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/correlation/">correlation</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/datawizard/">datawizard</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/easystats/">easystats</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/effectsize/">effectsize</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/insight/">insight</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/modelbased/">modelbased</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/performance/">performance</a></li>
+    <li><a class="dropdown-item" href="https://easystats.github.io/parameters/">parameters</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/report/">report</a></li>
+    <li><a class="external-link dropdown-item" href="https://easystats.github.io/see/">see</a></li>
+  </ul>
 </li>
-<li class="nav-item">
-  <a class="external-link nav-link" href="http://twitter.com/easystats4u" aria-label="Twitter">
-    <span class="fa fa-twitter"></span>
-     
-  </a>
-</li>
-<li class="nav-item">
-  <a class="external-link nav-link" href="https://github.com/easystats/parameters/" aria-label="github">
-    <span class="fab fa fab fa-github fa-lg"></span>
-     
-  </a>
+<li class="nav-item"><a class="external-link nav-link" href="http://twitter.com/easystats4u" aria-label="Twitter"><span class="fa fa-twitter"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/easystats/parameters/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item dropdown">
+  <button class="nav-link dropdown-toggle" type="button" id="dropdown-lightswitch" data-bs-toggle="dropdown" aria-expanded="false" aria-haspopup="true" aria-label="Light switch"><span class="fa fa-sun"></span></button>
+  <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdown-lightswitch">
+<li><button class="dropdown-item" data-bs-theme-value="light"><span class="fa fa-sun"></span> Light</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="dark"><span class="fa fa-moon"></span> Dark</button></li>
+    <li><button class="dropdown-item" data-bs-theme-value="auto"><span class="fa fa-adjust"></span> Auto</button></li>
+  </ul>
 </li>
       </ul>
 </div>
 
-    
+
   </div>
 </nav><div class="container template-home">
 <div class="row">
@@ -119,7 +91,7 @@
 <img src="logo.png" class="logo" alt=""><h1 id="parameters-">parameters <a class="anchor" aria-label="anchor" href="#parameters-"></a>
 </h1>
 </div>
-<p><a href="https://doi.org/10.21105/joss.02445" class="external-link"><img src="https://joss.theoj.org/papers/10.21105/joss.02445/status.svg" alt="DOI"></a> <a href="https://cran.r-project.org/package=parameters" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/parameters" alt="downloads"></a> <a href="https://cranlogs.r-pkg.org/" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/parameters" alt="total"></a> <a href="https://CRAN.R-project.org/package=parameters" class="external-link"><img src="https://tinyverse.netlify.com/badge/parameters" alt="status"></a></p>
+<p><a href="https://doi.org/10.21105/joss.02445" class="external-link"><img src="https://joss.theoj.org/papers/10.21105/joss.02445/status.svg" alt="DOI"></a> <a href="https://cran.r-project.org/package=parameters" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/parameters" alt="downloads"></a> <a href="https://cranlogs.r-pkg.org/" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/grand-total/parameters" alt="total"></a></p>
 <p><strong><em>Describe and understand your model’s parameters!</em></strong></p>
 <p><strong>parameters</strong>’ primary goal is to provide utilities for processing the parameters of various statistical models (see <a href="https://easystats.github.io/insight/" class="external-link">here</a> for a list of supported models). Beyond computing <em>p-values</em>, <em>CIs</em>, <em>Bayesian indices</em> and other measures for a wide variety of models, this package implements features like <em>bootstrapping</em> of parameters and models, <em>feature reduction</em> (feature extraction and variable selection), or tools for data reduction like functions to perform cluster, factor or principal component analysis.</p>
 <p>Another important goal of the <strong>parameters</strong> package is to facilitate and streamline the process of reporting results of statistical models, which includes the easy and intuitive calculation of standardized estimates or robust standard errors and p-values. <strong>parameters</strong> therefor offers a simple and unified syntax to process a large variety of (model) objects from many different packages.</p>
@@ -129,27 +101,27 @@
 <p><a href="https://cran.r-project.org/package=parameters" class="external-link"><img src="https://www.r-pkg.org/badges/version/parameters" alt="CRAN"></a> <a href="https://easystats.r-universe.dev" class="external-link"><img src="https://easystats.r-universe.dev/badges/parameters" alt="parameters status badge"></a> <a href="https://github.com/easystats/parameters/actions" class="external-link"><img src="https://github.com/easystats/parameters/workflows/R-CMD-check/badge.svg?branch=main" alt="R-CMD-check"></a></p>
 <table class="table">
 <colgroup>
-<col width="12%">
-<col width="13%">
-<col width="74%">
+<col width="33%">
+<col width="33%">
+<col width="33%">
 </colgroup>
-<thead><tr class="header">
+<thead><tr>
 <th>Type</th>
 <th>Source</th>
 <th>Command</th>
 </tr></thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>Release</td>
 <td>CRAN</td>
 <td><code>install.packages("parameters")</code></td>
 </tr>
-<tr class="even">
+<tr>
 <td>Development</td>
 <td>r - universe</td>
 <td><code>install.packages("parameters", repos = "https://easystats.r-universe.dev")</code></td>
 </tr>
-<tr class="odd">
+<tr>
 <td>Development</td>
 <td>GitHub</td>
 <td><code>remotes::install_github("easystats/parameters")</code></td>
@@ -176,6 +148,7 @@
 <li><a href="https://easystats.github.io/parameters/articles/efa_cfa.html">Structural models (EFA, CFA, SEM…)</a></li>
 <li><a href="https://easystats.github.io/parameters/articles/parameters_selection.html">Parameters selection</a></li>
 <li><a href="https://easystats.github.io/parameters/articles/demean.html">A Practical Guide for Panel Data Analysis</a></li>
+<li><a href="https://easystats.github.io/see/articles/parameters.html" class="external-link">Plotting functions</a></li>
 </ul>
 </div>
 <div class="section level2">
@@ -282,15 +255,15 @@
 <span><span class="fu"><a href="reference/model_parameters.html">model_parameters</a></span><span class="op">(</span><span class="va">model</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # Rotated loadings from Factor Analysis (oblimin-rotation)</span></span>
 <span><span class="co">#&gt; </span></span>
-<span><span class="co">#&gt; Variable   |  MR1  |  MR2  |  MR3  | Complexity | Uniqueness</span></span>
+<span><span class="co">#&gt; Variable   |   MR1 |   MR2 |   MR3 | Complexity | Uniqueness</span></span>
 <span><span class="co">#&gt; ------------------------------------------------------------</span></span>
-<span><span class="co">#&gt; rating     | 0.90  | -0.07 | -0.05 |    1.02    |    0.23   </span></span>
-<span><span class="co">#&gt; complaints | 0.97  | -0.06 | 0.04  |    1.01    |    0.10   </span></span>
-<span><span class="co">#&gt; privileges | 0.44  | 0.25  | -0.05 |    1.64    |    0.65   </span></span>
-<span><span class="co">#&gt; learning   | 0.47  | 0.54  | -0.28 |    2.51    |    0.24   </span></span>
-<span><span class="co">#&gt; raises     | 0.55  | 0.43  | 0.25  |    2.35    |    0.23   </span></span>
-<span><span class="co">#&gt; critical   | 0.16  | 0.17  | 0.48  |    1.46    |    0.67   </span></span>
-<span><span class="co">#&gt; advance    | -0.11 | 0.91  | 0.07  |    1.04    |    0.22   </span></span>
+<span><span class="co">#&gt; rating     |  0.90 | -0.07 | -0.05 |       1.02 |       0.23</span></span>
+<span><span class="co">#&gt; complaints |  0.97 | -0.06 |  0.04 |       1.01 |       0.10</span></span>
+<span><span class="co">#&gt; privileges |  0.44 |  0.25 | -0.05 |       1.64 |       0.65</span></span>
+<span><span class="co">#&gt; learning   |  0.47 |  0.54 | -0.28 |       2.51 |       0.24</span></span>
+<span><span class="co">#&gt; raises     |  0.55 |  0.43 |  0.25 |       2.35 |       0.23</span></span>
+<span><span class="co">#&gt; critical   |  0.16 |  0.17 |  0.48 |       1.46 |       0.67</span></span>
+<span><span class="co">#&gt; advance    | -0.11 |  0.91 |  0.07 |       1.04 |       0.22</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; The 3 latent factors (oblimin rotation) accounted for 66.60% of the total variance of the original data (MR1 = 38.19%, MR2 = 22.69%, MR3 = 5.72%).</span></span></code></pre></div>
 </div>
@@ -314,35 +287,86 @@
 <span><span class="co">#&gt; carb        |      -28.75 |   5.60 | [ -40.28, -17.23] | -5.13 | &lt; .001</span></span></code></pre></div>
 </div>
 <div class="section level2">
+<h2 id="statistical-inference---how-to-quantify-evidence">Statistical inference - how to quantify evidence<a class="anchor" aria-label="anchor" href="#statistical-inference---how-to-quantify-evidence"></a>
+</h2>
+<p>There is no standardized approach to drawing conclusions based on the available data and statistical models. A frequently chosen but also much criticized approach is to evaluate results based on their statistical significance (Amrhein, Korner-Nievergelt, &amp; Roth, 2017).</p>
+<p>A more sophisticated way would be to test whether estimated effects exceed the “smallest effect size of interest”, to avoid even the smallest effects being considered relevant simply because they are statistically significant, but clinically or practically irrelevant (Lakens, 2024; Lakens, Scheel, &amp; Isager, 2018). A rather unconventional approach, which is nevertheless advocated by various authors, is to interpret results from classical regression models in terms of probabilities, similar to the usual approach in Bayesian statistics (Greenland, Rafi, Matthews, &amp; Higgs, 2022; Rafi &amp; Greenland, 2020; Schweder, 2018; Schweder &amp; Hjort, 2003; Vos &amp; Holbert, 2022).</p>
+<p>The <em>parameters</em> package provides several options or functions to aid statistical inference. These are, for example:</p>
+<ul>
+<li>
+<a href="https://easystats.github.io/parameters/reference/equivalence_test.lm.html"><code>equivalence_test()</code></a>, to compute the (conditional) equivalence test for frequentist models</li>
+<li>
+<a href="https://easystats.github.io/parameters/reference/p_significance.lm.html"><code>p_significance()</code></a>, to compute the probability of <em>practical significance</em>, which can be conceptualized as a unidirectional equivalence test</li>
+<li>
+<a href="https://easystats.github.io/parameters/reference/p_function.html"><code>p_function()</code></a>, or <em>consonance function</em>, to compute p-values and compatibility (confidence) intervals for statistical models</li>
+<li>the <code>pd</code> argument (setting <code>pd = TRUE</code>) in <code><a href="reference/model_parameters.html">model_parameters()</a></code> includes a column with the <em>probability of direction</em>, i.e. the probability that a parameter is strictly positive or negative. See <a href="https://easystats.github.io/bayestestR/reference/p_direction.html" class="external-link"><code>bayestestR::p_direction()</code></a> for details.</li>
+<li>the <code>s_value</code> argument (setting <code>s_value = TRUE</code>) in <code><a href="reference/model_parameters.html">model_parameters()</a></code> replaces the p-values with their related <em>S</em>-values (@ Rafi &amp; Greenland, 2020)</li>
+<li>finally, it is possible to generate distributions of model coefficients by generating bootstrap-samples (setting <code>bootstrap = TRUE</code>) or simulating draws from model coefficients using <a href="https://easystats.github.io/parameters/reference/simulate_model.html"><code>simulate_model()</code></a>. These samples can then be treated as “posterior samples” and used in many functions from the <strong>bayestestR</strong> package.</li>
+</ul>
+<p>Most of the above shown options or functions derive from methods originally implemented for Bayesian models (Makowski, Ben-Shachar, Chen, &amp; Lüdecke, 2019). However, assuming that model assumptions are met (which means, the model fits well to the data, the correct model is chosen that reflects the data generating process (distributional model family) etc.), it seems appropriate to interpret results from classical frequentist models in a “Bayesian way” (more details: documentation in <a href="https://easystats.github.io/parameters/reference/p_function.html"><code>p_function()</code></a>).</p>
+</div>
+<div class="section level2">
 <h2 id="citation">Citation<a class="anchor" aria-label="anchor" href="#citation"></a>
 </h2>
 <p>In order to cite this package, please use the following command:</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" tabindex="-1"></a><span class="fu">citation</span>(<span class="st">"parameters"</span>)</span>
-<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a></span>
-<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a>To cite package <span class="st">'parameters'</span> <span class="cf">in</span> publications use<span class="sc">:</span></span>
-<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a>  Lüdecke D, Ben<span class="sc">-</span>Shachar M, Patil I, Makowski <span class="fu">D</span> (<span class="dv">2020</span>). <span class="st">"Extracting,</span></span>
-<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="st">  Computing and Exploring the Parameters of Statistical Models using</span></span>
-<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a><span class="st">  R."</span> _Journal of Open Source Software_, <span class="sc">*</span><span class="dv">5</span><span class="sc">*</span>(<span class="dv">53</span>), <span class="fl">2445.</span></span>
-<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a>  doi<span class="sc">:</span><span class="fl">10.21105</span><span class="sc">/</span>joss<span class="fl">.02445</span> <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.21105</span><span class="sc">/</span>joss<span class="fl">.02445</span><span class="sc">&gt;</span>.</span>
-<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a></span>
-<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a>A BibTeX entry <span class="cf">for</span> LaTeX users is</span>
-<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a></span>
-<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>  <span class="sc">@</span>Article{,</span>
-<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>    title <span class="ot">=</span> {Extracting, Computing and Exploring the Parameters of Statistical Models using {R}.},</span>
-<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    volume <span class="ot">=</span> {<span class="dv">5</span>},</span>
-<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    doi <span class="ot">=</span> {<span class="fl">10.21105</span><span class="sc">/</span>joss<span class="fl">.02445</span>},</span>
-<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    number <span class="ot">=</span> {<span class="dv">53</span>},</span>
-<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>    journal <span class="ot">=</span> {Journal of Open Source Software},</span>
-<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>    author <span class="ot">=</span> {Daniel Lüdecke and Mattan S. Ben<span class="sc">-</span>Shachar and Indrajeet Patil and Dominique Makowski},</span>
-<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>    year <span class="ot">=</span> {<span class="dv">2020</span>},</span>
-<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>    pages <span class="ot">=</span> {<span class="dv">2445</span>},</span>
-<span id="cb5-21"><a href="#cb5-21" tabindex="-1"></a>  }</span></code></pre></div>
+<span id="cb5-2"><a href="#cb5-2" tabindex="-1"></a>To cite package <span class="st">'parameters'</span> <span class="cf">in</span> publications use<span class="sc">:</span></span>
+<span id="cb5-3"><a href="#cb5-3" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" tabindex="-1"></a>  Lüdecke D, Ben<span class="sc">-</span>Shachar M, Patil I, Makowski <span class="fu">D</span> (<span class="dv">2020</span>). <span class="st">"Extracting,</span></span>
+<span id="cb5-5"><a href="#cb5-5" tabindex="-1"></a><span class="st">  Computing and Exploring the Parameters of Statistical Models using</span></span>
+<span id="cb5-6"><a href="#cb5-6" tabindex="-1"></a><span class="st">  R."</span> _Journal of Open Source Software_, <span class="sc">*</span><span class="dv">5</span><span class="sc">*</span>(<span class="dv">53</span>), <span class="fl">2445.</span></span>
+<span id="cb5-7"><a href="#cb5-7" tabindex="-1"></a>  doi<span class="sc">:</span><span class="fl">10.21105</span><span class="sc">/</span>joss<span class="fl">.02445</span> <span class="sc">&lt;</span>https<span class="sc">:</span><span class="er">//</span>doi.org<span class="sc">/</span><span class="fl">10.21105</span><span class="sc">/</span>joss<span class="fl">.02445</span><span class="sc">&gt;</span>.</span>
+<span id="cb5-8"><a href="#cb5-8" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="#cb5-9" tabindex="-1"></a>A BibTeX entry <span class="cf">for</span> LaTeX users is</span>
+<span id="cb5-10"><a href="#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="#cb5-11" tabindex="-1"></a>  <span class="sc">@</span>Article{,</span>
+<span id="cb5-12"><a href="#cb5-12" tabindex="-1"></a>    title <span class="ot">=</span> {Extracting, Computing and Exploring the Parameters of Statistical Models using {R}.},</span>
+<span id="cb5-13"><a href="#cb5-13" tabindex="-1"></a>    volume <span class="ot">=</span> {<span class="dv">5</span>},</span>
+<span id="cb5-14"><a href="#cb5-14" tabindex="-1"></a>    doi <span class="ot">=</span> {<span class="fl">10.21105</span><span class="sc">/</span>joss<span class="fl">.02445</span>},</span>
+<span id="cb5-15"><a href="#cb5-15" tabindex="-1"></a>    number <span class="ot">=</span> {<span class="dv">53</span>},</span>
+<span id="cb5-16"><a href="#cb5-16" tabindex="-1"></a>    journal <span class="ot">=</span> {Journal of Open Source Software},</span>
+<span id="cb5-17"><a href="#cb5-17" tabindex="-1"></a>    author <span class="ot">=</span> {Daniel Lüdecke and Mattan S. Ben<span class="sc">-</span>Shachar and Indrajeet Patil and Dominique Makowski},</span>
+<span id="cb5-18"><a href="#cb5-18" tabindex="-1"></a>    year <span class="ot">=</span> {<span class="dv">2020</span>},</span>
+<span id="cb5-19"><a href="#cb5-19" tabindex="-1"></a>    pages <span class="ot">=</span> {<span class="dv">2445</span>},</span>
+<span id="cb5-20"><a href="#cb5-20" tabindex="-1"></a>  }</span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="code-of-conduct">Code of Conduct<a class="anchor" aria-label="anchor" href="#code-of-conduct"></a>
 </h2>
 <p>Please note that the parameters project is released with a <a href="https://www.contributor-covenant.org/version/2/1/code_of_conduct/" class="external-link">Contributor Code of Conduct</a>. By contributing to this project, you agree to abide by its terms.</p>
+</div>
+<div class="section level2">
+<h2 id="references">References<a class="anchor" aria-label="anchor" href="#references"></a>
+</h2>
+<div id="refs" class="references csl-bib-body hanging-indent" entry-spacing="0" line-spacing="2">
+<div id="ref-amrhein_earth_2017" class="csl-entry">
+Amrhein, V., Korner-Nievergelt, F., &amp; Roth, T. (2017). The earth is flat ( <em>p</em> &gt; 0.05): Significance thresholds and the crisis of unreplicable research. <em>PeerJ</em>, <em>5</em>, e3544. <a href="https://doi.org/10.7717/peerj.3544" class="external-link uri">https://doi.org/10.7717/peerj.3544</a>
+</div>
+<div id="ref-greenland_aid_2022" class="csl-entry">
+Greenland, S., Rafi, Z., Matthews, R., &amp; Higgs, M. (2022). <em>To Aid Scientific Inference, Emphasize Unconditional Compatibility Descriptions of Statistics</em>. Retrieved from <a href="http://arxiv.org/abs/1909.08583" class="external-link uri">http://arxiv.org/abs/1909.08583</a>
+</div>
+<div id="ref-lakens_improving_2022" class="csl-entry">
+Lakens, D. (2024). <em>Improving Your Statistical Inferences</em>. <a href="https://doi.org/10.5281/ZENODO.6409077" class="external-link uri">https://doi.org/10.5281/ZENODO.6409077</a>
+</div>
+<div id="ref-lakens2020equivalence" class="csl-entry">
+Lakens, D., Scheel, A. M., &amp; Isager, P. M. (2018). Equivalence testing for psychological research: A tutorial. <em>Advances in Methods and Practices in Psychological Science</em>, <em>1</em>(2), 259–269. <a href="https://doi.org/10.1177/2515245918770963" class="external-link uri">https://doi.org/10.1177/2515245918770963</a>
+</div>
+<div id="ref-makowski_indices_2019" class="csl-entry">
+Makowski, D., Ben-Shachar, M. S., Chen, S. H. A., &amp; Lüdecke, D. (2019). Indices of Effect Existence and Significance in the Bayesian Framework. <em>Frontiers in Psychology</em>, <em>10</em>, 2767. <a href="https://doi.org/10.3389/fpsyg.2019.02767" class="external-link uri">https://doi.org/10.3389/fpsyg.2019.02767</a>
+</div>
+<div id="ref-rafi_semantic_2020" class="csl-entry">
+Rafi, Z., &amp; Greenland, S. (2020). Semantic and cognitive tools to aid statistical science: Replace confidence and significance by compatibility and surprise. <em>BMC Medical Research Methodology</em>, <em>20</em>(1), 244. <a href="https://doi.org/10.1186/s12874-020-01105-9" class="external-link uri">https://doi.org/10.1186/s12874-020-01105-9</a>
+</div>
+<div id="ref-schweder_confidence_2018" class="csl-entry">
+Schweder, T. (2018). Confidence is epistemic probability for empirical science. <em>Journal of Statistical Planning and Inference</em>, <em>195</em>, 116–125. <a href="https://doi.org/10.1016/j.jspi.2017.09.016" class="external-link uri">https://doi.org/10.1016/j.jspi.2017.09.016</a>
+</div>
+<div id="ref-schweder_frequentist_2003" class="csl-entry">
+Schweder, T., &amp; Hjort, N. L. (2003). Frequentist Analogues of Priors and Posteriors. In B. Stigum (Ed.), <em>Econometrics and the Philosophy of Economics: Theory-Data Confrontations in Economics</em> (pp. 285–217). Retrieved from <a href="https://www.duo.uio.no/handle/10852/10425" class="external-link uri">https://www.duo.uio.no/handle/10852/10425</a>
+</div>
+<div id="ref-vos_frequentist_2022" class="csl-entry">
+Vos, P., &amp; Holbert, D. (2022). Frequentist statistical inference without repeated sampling. <em>Synthese</em>, <em>200</em>(2), 89. <a href="https://doi.org/10.1007/s11229-022-03560-x" class="external-link uri">https://doi.org/10.1007/s11229-022-03560-x</a>
+</div>
+</div>
 </div>
 </div>
 
@@ -368,6 +392,7 @@
 <ul class="list-unstyled">
 <li><a href="CONTRIBUTING.html">Contributing guide</a></li>
 <li><a href="CODE_OF_CONDUCT.html">Code of conduct</a></li>
+<li><a href="SUPPORT.html">Getting help</a></li>
 </ul>
 </div>
 
@@ -403,21 +428,19 @@
 
 
     <footer><div class="pkgdown-footer-left">
-  <p></p>
-<p>Developed by <a href="https://github.com/strengejacke" class="external-link">Daniel Lüdecke</a>, <a href="https://dominiquemakowski.github.io/" class="external-link">Dominique Makowski</a>, <a href="https://home.msbstats.info/" class="external-link">Mattan S. Ben-Shachar</a>, <a href="https://sites.google.com/site/indrajeetspatilmorality/" class="external-link">Indrajeet Patil</a>, Søren Højsgaard, <a href="https://wiernik.org/" class="external-link">Brenton M. Wiernik</a>.</p>
+  <p>Developed by <a href="https://github.com/strengejacke" class="external-link">Daniel Lüdecke</a>, <a href="https://dominiquemakowski.github.io/" class="external-link">Dominique Makowski</a>, <a href="https://home.msbstats.info/" class="external-link">Mattan S. Ben-Shachar</a>, <a href="https://sites.google.com/site/indrajeetspatilmorality/" class="external-link">Indrajeet Patil</a>, Søren Højsgaard, <a href="https://wiernik.org/" class="external-link">Brenton M. Wiernik</a>.</p>
 </div>
 
 <div class="pkgdown-footer-right">
-  <p></p>
-<p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.0.7.9000.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.1.1.9000.</p>
 </div>
 
     </footer>
 </div>
 
-  
 
-  
+
+
 
   </body>
 </html>
